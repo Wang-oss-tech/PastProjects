@@ -1,0 +1,100 @@
+Chronologic VCS simulator copyright 1991-2022
+Contains Synopsys proprietary information.
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Apr  4 16:39 2024
+
+-----------------------------------------------------------
+ <Started> Prelab
+-----------------------------------------------------------
+
+USBTB @5: TB->Host requesting OUT to addr=63 endp=4
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 5s failed at 5s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 5
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 15s failed at 15s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 15
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 25s failed at 25s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 25
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 35s failed at 35s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 35
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 45s failed at 45s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 45
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 55s failed at 55s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 55
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 65s failed at 65s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 65
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 75s failed at 75s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 75
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 85s failed at 85s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 85
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 95s failed at 95s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 95
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 105s failed at 105s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 105
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 115s failed at 115s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 115
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 125s failed at 125s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 125
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 135s failed at 135s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 135
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 145s failed at 145s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 145
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 155s failed at 155s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 155
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 165s failed at 165s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 165
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 175s failed at 175s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 175
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 185s failed at 185s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 185
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 195s failed at 195s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 195
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 205s failed at 205s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 205
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 215s failed at 215s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 215
+!!! USBTB.device_inst.PROTECTED.chk_valid_bus: USB analyzer detected invalid bus state DP=x DM=x
+"USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: started at 225s failed at 225s
+	Offending '(current_bus inside {USBPkg::valid_usb_buses})'
+Error: "USBDevice.svp", 863: USBTB.device_inst.PROTECTED.chk_valid_bus: at time 225

@@ -1,0 +1,248 @@
+Chronologic VCS simulator copyright 1991-2022
+Contains Synopsys proprietary information.
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Apr 22 11:55 2024
+
+-----------------------------------------------------------
+ <Started> Transaction Abort Test
+   The `device_inst.chk_protocol` assertion will fail on    missing packets sent by the USBDevice... keep this in    mind.
+-----------------------------------------------------------
+
+USBTB @25: TB->Host attempting to abort transaction in ADDR
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @75: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @405: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @445: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @1425: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @1775: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @1945: USB analyzer detected *NAK*
+=================================================
+
+
+"USBDevice.svp", 995: USBTB.device_inst.PROTECTED.chk_protocol: started at 415s failed at 1955s
+	Offending '<Protected>'
+Error: "USBDevice.svp", 995: USBTB.device_inst.PROTECTED.chk_protocol: at time 1955
+!!! USBTB.device_inst.PROTECTED.chk_protocol: USB analyzer detected invalid sequence of packets
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @1995: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @2975: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @3205: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @3375: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @3425: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @4405: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @4535: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @4705: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @4755: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @5735: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @6125: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @6295: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @6345: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @7325: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @7845: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @8015: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @8065: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @9045: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @9095: USB analyzer is interpreting a new packet
+USBTB @9265: Device successfully aborted the transaction
+USBTB.device_inst.PROTECTED.unnamed$$_0 @9265: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @9315: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @10295: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @12895: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @13875: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @16475: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @17455: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @20055: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @21035: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @23635: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @24615: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @27215: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @28195: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @30795: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @31775: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+this happened!
+
+USBTB @34375: Host and device aborted the transaction in ADDR
+USBTB @34395: TB->Host attempting to abort transaction in DATA
+this happened!
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @34445: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @34775: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @34815: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @35795: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @36285: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @36455: USB analyzer detected *ACK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @36505: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @36835: USB analyzer detected *OUT* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @36875: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @37855: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @38305: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @38475: USB analyzer detected *NAK*
+=================================================
+
+
+"USBDevice.svp", 995: USBTB.device_inst.PROTECTED.chk_protocol: started at 34785s failed at 38485s
+	Offending '<Protected>'
+Error: "USBDevice.svp", 995: USBTB.device_inst.PROTECTED.chk_protocol: at time 38485
+!!! USBTB.device_inst.PROTECTED.chk_protocol: USB analyzer detected invalid sequence of packets
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @38525: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @39505: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @39655: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @39825: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @39875: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @40855: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @40965: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @41135: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @41185: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @42165: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @42425: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @42595: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @42645: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @43625: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @44065: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @44235: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @44285: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED.unnamed$$_0 @45265: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @45345: USB analyzer is interpreting a new packet
+USBTB @45515: Device successfully aborted the transaction
+"USBTB.sv", 597: USBTB.unnamed$$_24: started at 45515s failed at 45515s
+	Offending 'USBTB.device_inst.device_idle'
+Error: "USBTB.sv", 597: USBTB.unnamed$$_24: at time 45515
+Device is still attempting to finish the transaction
+$finish called from file "USBTB.sv", line 599.
+$finish at simulation time                45515
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 45515
+CPU Time:      0.380 seconds;       Data structure size:   2.1Mb
+Mon Apr 22 11:55:54 2024

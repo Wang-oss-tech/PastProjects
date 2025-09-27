@@ -1,0 +1,87 @@
+Chronologic VCS simulator copyright 1991-2022
+Contains Synopsys proprietary information.
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Apr 13 04:46 2024
+bit output: 0
+
+bit output: 1
+
+bit output: 0
+
+bit output: 1
+
+bit output: 0
+
+bit output: 1
+
+bit output: 0
+
+bit output: 1
+
+bit output: 0
+
+bit output: 1
+
+bit output: 0
+
+bit output: 1
+
+bit output: 0
+
+bit output: 1
+
+bit output: 0
+
+bit output: 1
+
+bit output: 0
+
+bit output: 1
+
+bit output: 0
+
+bit output: 1
+
+bit output: 0
+
+bit output: 1
+
+bit output: 0
+
+bit output: 1
+
+bit output: 0
+
+bit output: 1
+
+bit output: 0
+
+bit output: 1
+
+bit output: 0
+
+bit output: 1
+
+bit output: 0
+
+bit output: 1
+
+bit output: 0
+
+bit output: 1
+
+bit output: 0
+
+bit output: 1
+
+bit output: 0
+
+bit output: 1
+
+bit output: 0
+
+$finish called from file "customTB.sv", line 31.
+$finish at simulation time                 1005
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1005
+CPU Time:      0.710 seconds;       Data structure size:   0.0Mb
+Sat Apr 13 04:46:52 2024

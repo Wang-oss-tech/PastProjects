@@ -1,0 +1,4 @@
+build/bin
+build/kernel
+build/user
+.DS_Store

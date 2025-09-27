@@ -1,0 +1,416 @@
+`default_nettype none
+
+module sendPacketTB ();
+
+  pid_t pktType;
+  logic [(`PAYLOAD_BITS) - 1 : 0] payload;
+  logic start, clock;
+  logic done;
+  bus_state_t busOut;
+
+  initial begin
+    clock = 0;
+    forever #5 clock = ~clock;
+  end
+
+  sendPacket DUT (.*, .isAddr(0));
+
+  logic [3 : 0] onesCount, onesCountPostStuff;
+  logic bitIn, bitInStuffed;
+  assign bitIn = DUT.helper.bitOutFeeder;
+  assign bitInStuffed = DUT.helper.bitOutBitStuffer;
+
+  logic [`COUNT_BITS - 1 : 0] dutCount;
+  assign dutCount = DUT.helper.count;
+
+  phase_t cp;
+  assign cp = DUT.helper.currPhase;
+
+  always_ff @(posedge clock) begin
+    if (start || bitIn == 0) begin
+      onesCount <= 0;
+    end
+    else if (DUT.helper.currPhase != SYNC_P && DUT.helper.currPhase != PID_P
+    && DUT.helper.currPhase != EOP_P) begin
+      onesCount <= onesCount + 1;
+    end
+    else begin
+      onesCount <= onesCount;
+    end
+  end
+
+  always_ff @(posedge clock) begin
+    if (start || bitInStuffed == 0) begin
+      onesCountPostStuff <= 0;
+    end
+    else if (DUT.helper.currPhase != SYNC_P && DUT.helper.currPhase != PID_P
+    && DUT.helper.currPhase != EOP_P) begin
+      onesCountPostStuff <= onesCountPostStuff + 1;
+    end
+    else begin
+      onesCountPostStuff <= onesCountPostStuff;
+    end
+  end
+
+  logic dutBitOut;
+
+  assign dutBitOut = DUT.helper.nrzi;
+
+  task sendData(input logic [63 : 0] pload);
+    pktType <= PID_OUT;
+    payload <= pload;
+    start <= 1;
+    @(posedge clock);
+    start <= 0;
+    wait(done);
+    @(posedge clock);
+    @(posedge clock);
+    @(posedge clock);
+  endtask
+
+  initial begin
+  
+    // sendData(64'hf0ff0ff0c0c0ffee);
+    // sendData(64'hffffffffffffffff);
+    // sendData(64'h123456789abcdeff);
+    // sendData(64'hdeadbeefc0c0ffee);
+    // sendData(64'habcdeabcdeabcdea);
+    // sendData(64'hf0f0f0f0f0f0f0f0);
+    // sendData(64'h0000000000000000);
+    sendData(64'd0);
+    $finish;
+  end
+
+  /*
+    systems: crc, nrzi, bit stuffer, counter, phase tracker, done, 
+    halt-counter handshake, feeder's adherence to halt, 
+
+    done:
+    1. done only for one clock cycle when last packet of eop on bus
+
+    bit stuffer:
+    1. when the 6th one is on the line, on the next cycle, 
+    and the phase is a non-PID info phase, halt should be 
+    asserted for one clock cycle
+    2. on the output of bit stuffer, no more than 6 consecutive ones should be 
+    seen if the phase is a non-PID info phase
+
+    phase tracker: dependending on packet:
+    for non info-PID phase : predictable sequence of phases
+    for info-PID phase: keep track of number of halts associated with 
+    subphases
+
+    pipeline: feeder + crc -> crc + bit stuffer -> nrzi -> sent out
+
+    final bus state: should be Zs only when the module is not in 
+    an active sending spree
+  */
+
+  property doneOneCycle;
+    @(posedge clock)
+    (~done ##1 done) |=> ~done;
+  endproperty
+
+  property ifLastPktDone;
+    @(posedge clock)
+    ((DUT.helper.currPhase != EOP_P) ##1 (DUT.helper.currPhase == EOP_P)) |=>
+    (DUT.helper.currPhase == EOP_P) ##1 ((DUT.helper.currPhase == EOP_P) &&
+    done);
+  endproperty
+
+  property doneThenLastPktData;
+    @(posedge clock)
+    (done && (pktType == PID_DATA0)) |-> (dutCount == 98);
+  endproperty
+
+  property doneThenLastPktOutIn;
+    @(posedge clock)
+    (done && (pktType == PID_OUT || pktType == PID_IN)) |-> (dutCount == 34);
+  endproperty
+
+  property doneThenLastPktAckNack;
+    @(posedge clock)
+    (done && (pktType == PID_ACK || pktType == PID_NAK)) |-> (dutCount == 18);
+  endproperty
+
+  property haltOneCycle;
+    @(posedge clock)
+    (~DUT.helper.halt ##1 DUT.helper.halt) |=> ~DUT.helper.halt;
+  endproperty
+
+  property noMoreThanSixConsecutiveOnes;
+    @(posedge clock)
+    ##1 onesCountPostStuff <= 'd6;
+  endproperty
+
+  property countSixImpliesHalt;
+    @(posedge clock)
+    (onesCount == 'd6) |-> DUT.helper.halt;
+  endproperty
+
+  property haltImpliesCountSix;
+    @(posedge clock)
+    DUT.helper.halt |-> (onesCount == 'd6);
+  endproperty
+
+  property haltInCorrectPhase;
+    @(posedge clock)
+    DUT.helper.halt |-> (DUT.helper.currPhase != SYNC_P && DUT.helper.currPhase != PID_P
+    && DUT.helper.currPhase != EOP_P);
+  endproperty
+
+  // phase tests
+
+  property syncThenL8;
+    @(posedge clock)
+    (cp == SYNC_P) |-> (dutCount >= 0 && dutCount <= 7);
+  endproperty
+
+  property L8thenSync;
+    @(posedge clock)
+    (dutCount >= 0 && dutCount <= 7) |-> (cp == SYNC_P);
+  endproperty
+
+  property pidThenL16;
+    @(posedge clock)
+    (cp == PID_P) |-> (dutCount >= 8 && dutCount <= 15);
+  endproperty
+
+  property L16thenPID;
+    @(posedge clock)
+    (dutCount >= 8 && dutCount <= 15) |-> (cp == PID_P);
+  endproperty
+
+  property dataL80thenPAYLOAD;
+    @(posedge clock)
+    (pktType == PID_DATA0) && 
+    (dutCount >= 16 && dutCount <= 79) |-> (cp == PAYLOAD_P);
+  endproperty
+
+  property payloadDataThenL80;
+    @(posedge clock)
+    ((pktType == PID_DATA0) && (cp == PAYLOAD_P))
+    |-> (dutCount >= 16 && dutCount <= 79);
+  endproperty
+
+  property dataL96thenCRC;
+    @(posedge clock)
+    (pktType == PID_DATA0) && 
+    (dutCount >= 80 && dutCount <= 95) |-> (cp == CRC_P);
+  endproperty
+
+  property crcDataThenL96;
+    @(posedge clock)
+    ((pktType == PID_DATA0) && (cp == CRC_P))
+    |-> (dutCount >= 80 && dutCount <= 95);
+  endproperty
+
+  property dataL99thenEOP;
+    @(posedge clock)
+    (pktType == PID_DATA0) && 
+    (dutCount >= 96 && dutCount <= 98) |-> (cp == EOP_P);
+  endproperty
+
+  property eopDataThenG96;
+    @(posedge clock)
+    ((pktType == PID_DATA0) && (cp == EOP_P))
+    |-> (dutCount >= 96);
+  endproperty
+
+  property ackNackL19thenEOP;
+    @(posedge clock)
+    (pktType == PID_ACK || pktType == PID_NAK) && 
+    (dutCount >= 16 && dutCount <= 18) |-> (cp == EOP_P);
+  endproperty
+
+  property eopAckNackThenG16;
+    @(posedge clock)
+    ((pktType == PID_ACK || pktType == PID_NAK) && (cp == EOP_P))
+    |-> (dutCount >= 16);
+  endproperty
+
+  property outInL23thenADDR;
+    @(posedge clock)
+    (pktType == PID_OUT || pktType == PID_IN) && 
+    (dutCount >= 16 && dutCount <= 22) |-> (cp == ADDR_P);
+  endproperty
+
+  property addrOutInThenL23;
+    @(posedge clock)
+    ((pktType == PID_OUT || pktType == PID_IN) && (cp == ADDR_P))
+    |-> (dutCount >= 16 && dutCount <= 22);
+  endproperty
+
+  property outInL27thenENDP;
+    @(posedge clock)
+    (pktType == PID_OUT || pktType == PID_IN) && 
+    (dutCount >= 23 && dutCount <= 26) |-> (cp == ENDP_P);
+  endproperty
+
+  property endpOutInThenL27;
+    @(posedge clock)
+    ((pktType == PID_OUT || pktType == PID_IN) && (cp == ENDP_P))
+    |-> (dutCount >= 23 && dutCount <= 26);
+  endproperty
+
+  property outInL32thenCRC;
+    @(posedge clock)
+    (pktType == PID_OUT || pktType == PID_IN) && 
+    (dutCount >= 27 && dutCount <= 31) |-> (cp == CRC_P);
+  endproperty
+
+  property crcOutInThenL32;
+    @(posedge clock)
+    ((pktType == PID_OUT || pktType == PID_IN) && (cp == CRC_P))
+    |-> (dutCount >= 27 && dutCount <= 31);
+  endproperty
+
+  property outInL35thenEOP;
+    @(posedge clock)
+    (pktType == PID_OUT || pktType == PID_IN) && 
+    (dutCount >= 32 && dutCount <= 34) |-> (cp == EOP_P);
+  endproperty
+
+  property eopOutInThenG33;
+    @(posedge clock)
+    ((pktType == PID_OUT || pktType == PID_IN) && (cp == EOP_P))
+    |-> (dutCount >= 32);
+  endproperty
+
+
+  dataL80thenPAYLOADTest : assert property (dataL80thenPAYLOAD) else $error ("%m failed!\n");
+
+  payloadDataThenL80Test : assert property (payloadDataThenL80) else $error ("%m failed!\n");
+
+  dataL96thenCRCTest : assert property (dataL96thenCRC) else $error ("%m failed!\n");
+
+  crcDataThenL96Test : assert property (crcDataThenL96) else $error ("%m failed!\n");
+
+  dataL99thenEOPTest : assert property (dataL99thenEOP) else $error ("%m failed!\n");
+
+  eopDataThenG96Test : assert property (eopDataThenG96) else $error ("%m failed!\n");
+
+  ackNackL19thenEOPTest : assert property (ackNackL19thenEOP) else $error ("%m failed!\n");
+
+  eopAckNackThenG16Test : assert property (eopAckNackThenG16) else $error ("%m failed!\n");
+
+
+  dataL80thenPAYLOADCover : cover property (dataL80thenPAYLOAD);
+
+  payloadDataThenL80Cover : cover property (payloadDataThenL80);
+
+  dataL96thenCRCCover : cover property (dataL96thenCRC);
+
+  crcDataThenL96Cover : cover property (crcDataThenL96);
+
+  dataL99thenEOPCover : cover property (dataL99thenEOP);
+
+  eopDataThenG96Cover : cover property (eopDataThenG96);
+
+  ackNackL19thenEOPCover : cover property (ackNackL19thenEOP);
+
+  eopAckNackThenG16Cover : cover property (eopAckNackThenG16);
+
+
+  doneThenLastPktDataTest: assert property (doneThenLastPktData) else $error ("%m failed!\n");
+
+  doneThenLastPktOutInTest: assert property (doneThenLastPktOutIn) else $error ("%m failed!\n");
+
+  doneThenLastPktAckNackTest: assert property (doneThenLastPktAckNack) else $error ("%m failed!\n");
+
+  doneThenLastPktDataCover: cover property (doneThenLastPktData);
+
+  doneThenLastPktOutInCover: cover property (doneThenLastPktOutIn);
+
+  doneThenLastPktAckNackCover: cover property (doneThenLastPktAckNack);
+
+
+  ifLastPktDoneTest: assert property (ifLastPktDone) else $error ("%m failed!\n");
+
+  haltOneCycleTest: assert property (haltOneCycle) else $error ("%m failed!\n");
+
+  noMoreThanSixConsecutiveOnesTest: assert property (noMoreThanSixConsecutiveOnes) else $error ("%m failed!\n");
+
+  // countSixImpliesHaltTest: assert property (countSixImpliesHalt) else $error ("%m failed!\n");
+
+  // haltImpliesCountSixTest: assert property (haltImpliesCountSix) else $error ("%m failed!\n");
+
+  haltInCorrectPhaseTest: assert property (haltInCorrectPhase) else $error ("%m failed!\n");
+
+
+  syncThenL8Test: assert property (syncThenL8) else $error ("%m failed!\n");
+
+  L8thenSyncTest: assert property (L8thenSync) else $error ("%m failed!\n");
+
+
+  pidThenL16Test: assert property (pidThenL16) else $error ("%m failed!\n");
+
+  L16thenPIDTest: assert property (L16thenPID) else $error ("%m failed!\n");
+
+
+  outInL23thenADDRTest: assert property (outInL23thenADDR) else $error ("%m failed!\n");
+
+  addrOutInThenL23Test: assert property (addrOutInThenL23) else $error ("%m failed!\n");
+
+
+  outInL27thenENDPTest: assert property (outInL27thenENDP) else $error ("%m failed!\n");
+
+  endpOutInThenL27Test: assert property (endpOutInThenL27) else $error ("%m failed!\n");
+
+
+  outInL35thenEOPTest: assert property (outInL35thenEOP) else $error ("%m failed!\n");
+
+  eopOutInThenG33Test: assert property (eopOutInThenG33) else $error ("%m failed!\n");
+
+
+  outInL32thenCRCTest: assert property (outInL32thenCRC) else $error ("%m failed!\n");
+
+  crcOutInThenL32Test: assert property (crcOutInThenL32) else $error ("%m failed!\n");
+
+
+
+  doneOneCycleCover: cover property (doneOneCycle);
+
+  ifLastPktDoneCover: cover property (ifLastPktDone);
+
+  haltOneCycleCover: cover property (haltOneCycle);
+
+  noMoreThanSixConsecutiveOnesCover: cover property (noMoreThanSixConsecutiveOnes);
+
+  // countSixImpliesHaltCover: cover property (countSixImpliesHalt);
+
+  // haltImpliesCountSixCover: cover property (haltImpliesCountSix);
+
+  haltInCorrectPhaseCover: cover property (haltInCorrectPhase);
+
+
+  syncThenL8Cover: cover property (syncThenL8);
+
+  L8thenSyncCover: cover property (L8thenSync);
+
+
+  pidThenL16Cover: cover property (pidThenL16);
+
+  L16thenPIDCover: cover property (L16thenPID);
+
+
+  outInL23thenADDRCover: cover property (outInL23thenADDR);
+
+  addrOutInThenL23Cover: cover property (addrOutInThenL23);
+
+
+  outInL27thenENDPCover: cover property (outInL27thenENDP);
+
+  endpOutInThenL27Cover: cover property (endpOutInThenL27);
+
+
+  outInL35thenEOPCover: cover property (outInL35thenEOP);
+
+  eopOutInThenG33Cover: cover property (eopOutInThenG33);
+
+
+  outInL32thenCRCCover: cover property (outInL32thenCRC);
+
+  crcOutInThenL32Cover: cover property (crcOutInThenL32);
+
+endmodule: sendPacketTB

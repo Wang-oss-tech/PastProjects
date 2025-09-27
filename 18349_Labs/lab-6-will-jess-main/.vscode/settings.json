@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "gpio.h": "c",
+        "exti.h": "c",
+        "rcc.h": "c",
+        "nvic.h": "c",
+        "__locale": "c",
+        "arm.h": "c",
+        "motor_driver.h": "c"
+    }
+}

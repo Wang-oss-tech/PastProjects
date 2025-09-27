@@ -1,0 +1,87 @@
+Chronologic VCS simulator copyright 1991-2022
+Contains Synopsys proprietary information.
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Apr 21 21:41 2024
+
+-----------------------------------------------------------
+ <Started> Simple Read/Write Test
+-----------------------------------------------------------
+
+USBTB @5: TB->Host writing mempage 0f21 and data 40aa11b7682df6d8
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @65: USB analyzer is interpreting a new packet
+Raw Bus Traffic: JKJKJKKKJKJKKKKKKKKKKJKJKKJKJJKJ00J
+Bitstream:       000000110000111111111 0001000100
+Packet: '{sync:'h1, pid:'h1, pid_n:'he, addr:'h3f, endp:'h4, payload:'hxxxxxxxxxxxxxxxx, crc5:'h4, crc16:'hxxxx}
+USBTB.device_inst.PROTECTED.unnamed$$_0 @405: USB analyzer detected *OUT* with ADDR=63 ENDP=4 CRC5=04 (correct 04)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @445: USB analyzer is interpreting a new packet
+Raw Bus Traffic: JKJKJKKKKJKJKKKKJKJKKJKKKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKJKJKJJKJKJKKJK00J
+Bitstream:       00000011100001110000100111100000000000000000000000000000000000000000000000000001100000100000100
+Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'hf21, crc5:'hxx, crc16:'h2083}
+USBTB.device_inst.PROTECTED.unnamed$$_0 @1415: USB analyzer detected *DATA0* with PAYLOAD=0000000000000f21 CRC16=2083 (correct 2083)
+=================================================
+
+
+"USBDevice.svp", 995: USBTB.device_inst.PROTECTED.chk_protocol: started at 415s failed at 1435s
+	Offending '<Protected>'
+Error: "USBDevice.svp", 995: USBTB.device_inst.PROTECTED.chk_protocol: at time 1435
+!!! USBTB.device_inst.PROTECTED.chk_protocol: USB analyzer detected invalid sequence of packets
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @1765: USB analyzer is interpreting a new packet
+Raw Bus Traffic: JKJKJKKJJKJJKKK00J
+Bitstream:       000000101001011
+Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
+USBTB.device_inst.PROTECTED.unnamed$$_0 @1935: USB analyzer detected *ACK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @1995: USB analyzer is interpreting a new packet
+Raw Bus Traffic: JKJKJKKKJKJKKKKKKKKKKJKJKJJKKJJJ00J
+Bitstream:       000000110000111111111 0000101011
+Packet: '{sync:'h1, pid:'h1, pid_n:'he, addr:'h3f, endp:'h8, payload:'hxxxxxxxxxxxxxxxx, crc5:'h1a, crc16:'hxxxx}
+USBTB.device_inst.PROTECTED.unnamed$$_0 @2335: USB analyzer detected *OUT* with ADDR=63 ENDP=8 CRC5=1a (correct 1a)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @2375: USB analyzer is interpreting a new packet
+Raw Bus Traffic: JKJKJKKKKJKJKKKJKJJJKKKJJJKKKKKKJJJKKJKJKJJKKKJJJJKKKJJJKJKKJKJKKJJKKJJKJKJKJJKJJKKJKKJKJJKKJJK00J
+Bitstream:       00000011100001100011011011011111011010000010110111011011000100001010101000000100101001000101010
+Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h40aa11b7682df6d8, crc5:'hxx, crc16:'h544a}
+USBTB.device_inst.PROTECTED.unnamed$$_0 @3345: USB analyzer detected *DATA0* with PAYLOAD=40aa11b7682df6d8 CRC16=544a (correct 544a)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @3575: USB analyzer is interpreting a new packet
+Raw Bus Traffic: JKJKJKKJJKJJKKK00J
+Bitstream:       000000101001011
+Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
+USBTB.device_inst.PROTECTED.unnamed$$_0 @3745: USB analyzer detected *ACK*
+=================================================
+
+
+"USBTB.sv", 173: USBTB.unnamed$$_3: started at 3785s failed at 3785s
+	Offending '(USBTB.device_inst.memory[mempage] == data_to_host)'
+Error: "USBTB.sv", 173: USBTB.unnamed$$_3: at time 3785
+Device wrote the wrong value to memory[0f21]=0000000000000000
+USBTB @3785: TB->Host reading mempage 0f21
+"USBTB.sv", 196: USBTB.unnamed$$_6: started at 3815s failed at 3815s
+	Offending '(data_from_host == data_to_host)'
+Error: "USBTB.sv", 196: USBTB.unnamed$$_6: at time 3815
+Host read the wrong value from memory[0f21]=40aa11b7682df6d8 (saw 0000000000000000)
+
+-----------------------------------------------------------
+ <Finished> Simple Read/Write Test
+-----------------------------------------------------------
+
+$finish called from file "USBTB.sv", line 610.
+$finish at simulation time                 3815
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 3815
+CPU Time:      0.390 seconds;       Data structure size:   2.1Mb
+Sun Apr 21 21:41:25 2024

@@ -1,0 +1,2304 @@
+vcs -full64 -sverilog -debug_all +lint=all +warn=all -j80 +v2k    -o simv USBDevice.svp USBHost.sv USBTB.sv bitStuffing.sv crcGen.sv feederArray.sv library.sv nrzi.sv phaseTracker.sv testTB.sv usbHostNew.sv 
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option '-debug_all' will be deprecated in a future release.  Please use 
+  '-debug_acc+all+dmptf -debug_region+cell+encrypt' instead.
+
+                         Chronologic VCS (TM)
+         Version T-2022.06_Full64 -- Sun Apr 14 23:24:35 2024
+
+                    Copyright (c) 1991 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option '-debug_all' will be deprecated in a future release.  Please use 
+  '-debug_acc+all -debug_region+cell+encrypt' instead.
+
+Parsing design file 'USBDevice.svp'
+Parsing included file 'USB.svh'.
+Back to file 'USBDevice.svp'.
+Parsing included file 'USBPkg.pkg'.
+Parsing included file 'USB.svh'.
+Back to file 'USBPkg.pkg'.
+
+Lint-[SV-PIU] Package import statement in $unit scope.
+USBPkg.pkg, 49
+$unit
+  There is an import statement in $unit scope.
+  Although this is legal as per the SystemVerilog LRM, it means that package 
+  content will be shared without explicit import of the package.
+  Package: USBPkg::*
+
+Back to file 'USBDevice.svp'.
+
+Lint-[NS] Null statement
+USBDevice.svp, 16
+
+
+
+Lint-[NS] Null statement
+USBDevice.svp, 16
+
+
+
+Lint-[NS] Null statement
+USBDevice.svp, 16
+
+
+
+Lint-[NS] Null statement
+USBDevice.svp, 16
+
+
+
+Lint-[NS] Null statement
+USBDevice.svp, 16
+
+
+
+Lint-[NS] Null statement
+USBDevice.svp, 16
+
+
+
+Lint-[NS] Null statement
+USBDevice.svp, 16
+
+
+
+Lint-[NS] Null statement
+USBDevice.svp, 372
+
+
+
+Lint-[NS] Null statement
+USBDevice.svp, 698
+
+
+
+Lint-[NS] Null statement
+USBDevice.svp, 1048
+  Null statement is used in following verilog source.
+  Source info:       @(posedge en_pkt_inbound);
+
+
+Lint-[NS] Null statement
+USBDevice.svp, 1049
+  Null statement is used in following verilog source.
+  Source info:       ##1 ;
+
+
+Lint-[NS] Null statement
+USBDevice.svp, 1067
+  Null statement is used in following verilog source.
+  Source info:         ##1 ;
+
+
+Lint-[NS] Null statement
+USBDevice.svp, 1072
+  Null statement is used in following verilog source.
+  Source info:         ##1 ;
+
+
+Lint-[NS] Null statement
+USBDevice.svp, 1119
+  Null statement is used in following verilog source.
+  Source info:       ##1 ;
+
+Parsing design file 'USBHost.sv'
+Parsing included file 'USBPkg.pkg'.
+Back to file 'USBHost.sv'.
+
+Lint-[NS] Null statement
+USBHost.sv, 31
+  Null statement is used in following verilog source.
+  Source info:   #1;
+
+
+Lint-[NS] Null statement
+USBHost.sv, 33
+  Null statement is used in following verilog source.
+  Source info:   wait(done);
+
+
+Lint-[NS] Null statement
+USBHost.sv, 34
+  Null statement is used in following verilog source.
+  Source info:   @(posedge clock);
+
+Parsing design file 'USBTB.sv'
+Parsing included file 'USBPkg.pkg'.
+Back to file 'USBTB.sv'.
+
+Lint-[NS] Null statement
+USBTB.sv, 99
+  Null statement is used in following verilog source.
+  Source info:     ##10000000 ;
+
+
+Lint-[NS] Null statement
+USBTB.sv, 113
+  Null statement is used in following verilog source.
+  Source info:       ##1 ;
+
+
+Lint-[NS] Null statement
+USBTB.sv, 126
+  Null statement is used in following verilog source.
+  Source info:           @(posedge device_inst.device_done_tx);
+
+
+Lint-[NS] Null statement
+USBTB.sv, 133
+  Null statement is used in following verilog source.
+  Source info:       ##2 ; // Have to check a cycle later
+
+
+Lint-[NS] Null statement
+USBTB.sv, 151
+  Null statement is used in following verilog source.
+  Source info:       ##1 ;
+
+
+Lint-[NS] Null statement
+USBTB.sv, 216
+  Null statement is used in following verilog source.
+  Source info:       ##1 ;
+
+
+Lint-[NS] Null statement
+USBTB.sv, 265
+  Null statement is used in following verilog source.
+  Source info:       ##1 ;
+
+
+Lint-[NS] Null statement
+USBTB.sv, 331
+  Null statement is used in following verilog source.
+  Source info:       ##1 ;
+
+
+Lint-[NS] Null statement
+USBTB.sv, 346
+  Null statement is used in following verilog source.
+  Source info:             @(posedge device_inst.device_done_tx);
+
+
+Lint-[NS] Null statement
+USBTB.sv, 393
+  Null statement is used in following verilog source.
+  Source info:       ##1 ;
+
+
+Lint-[NS] Null statement
+USBTB.sv, 408
+  Null statement is used in following verilog source.
+  Source info:             @(posedge device_inst.device_done_tx);
+
+
+Lint-[NS] Null statement
+USBTB.sv, 457
+  Null statement is used in following verilog source.
+  Source info:       ##1 ;
+
+
+Lint-[NS] Null statement
+USBTB.sv, 474
+  Null statement is used in following verilog source.
+  Source info:             @(posedge device_inst.device_done_tx);
+
+
+Lint-[NS] Null statement
+USBTB.sv, 525
+  Null statement is used in following verilog source.
+  Source info:       ##1 ;
+
+
+Lint-[NS] Null statement
+USBTB.sv, 538
+  Null statement is used in following verilog source.
+  Source info:           @(posedge device_inst.device_done_tx);
+
+
+Lint-[NS] Null statement
+USBTB.sv, 576
+  Null statement is used in following verilog source.
+  Source info:           @(posedge device_inst.device_done_tx);
+
+Parsing design file 'bitStuffing.sv'
+Parsing design file 'crcGen.sv'
+Parsing design file 'feederArray.sv'
+Parsing design file 'library.sv'
+Parsing design file 'nrzi.sv'
+Parsing design file 'phaseTracker.sv'
+Parsing design file 'testTB.sv'
+
+Lint-[NS] Null statement
+testTB.sv, 13
+  Null statement is used in following verilog source.
+  Source info:       @(posedge clock);
+
+Parsing design file 'usbHostNew.sv'
+Top Level Modules:
+       USBTB
+       MagComp
+       Adder
+       Multiplexer
+       Mux2to1
+       Decoder
+       Register
+       Register_async
+       Register_async_customReset
+       Counter
+       Counter_async
+       CountFive
+       TwoCounter
+       Synchronizer
+       ShiftRegister_SIPO
+       ShiftRegister_PIPO
+       BarrelShiftRegister
+       BusDriver
+       Memory
+       OffsetCheck
+       hexDisplay0
+       hexDisplay1
+       hexDisplay2
+       hexDisplay3
+       TB
+No TimeScale specified
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 869
+"wires.DP"
+  Non-sampled variable "wires.DP" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 869
+"wires"
+  Non-sampled variable "wires" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 869
+"DP"
+  Non-sampled variable "DP" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 869
+"wires.DM"
+  Non-sampled variable "wires.DM" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 869
+"wires"
+  Non-sampled variable "wires" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 869
+"DM"
+  Non-sampled variable "DM" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 893
+"debug_pkt.sync"
+  Non-sampled variable "debug_pkt.sync" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 893
+"debug_pkt"
+  Non-sampled variable "debug_pkt" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 893
+"sync"
+  Non-sampled variable "sync" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 902
+"debug_pkt.pid"
+  Non-sampled variable "debug_pkt.pid" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 902
+"debug_pkt"
+  Non-sampled variable "debug_pkt" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 902
+"pid"
+  Non-sampled variable "pid" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 911
+"debug_pkt.pid"
+  Non-sampled variable "debug_pkt.pid" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 911
+"debug_pkt"
+  Non-sampled variable "debug_pkt" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 911
+"pid"
+  Non-sampled variable "pid" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 911
+"debug_pkt.pid_n"
+  Non-sampled variable "debug_pkt.pid_n" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 911
+"debug_pkt"
+  Non-sampled variable "debug_pkt" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 911
+"pid_n"
+  Non-sampled variable "pid_n" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 921
+"debug_pkt.addr"
+  Non-sampled variable "debug_pkt.addr" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 921
+"debug_pkt"
+  Non-sampled variable "debug_pkt" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 921
+"addr"
+  Non-sampled variable "addr" is used in action block of assertion.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBDevice.svp, 931
+_USBAnalyzer, "fn_crc5_nr(debug_pkt)"
+  The assertion contains function call "fn_crc5_nr(debug_pkt)" which can have 
+  side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 932
+"debug_pkt.crc5"
+  Non-sampled variable "debug_pkt.crc5" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 932
+"debug_pkt"
+  Non-sampled variable "debug_pkt" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 932
+"crc5"
+  Non-sampled variable "crc5" is used in action block of assertion.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBDevice.svp, 935
+"fn_crc5_nr(debug_pkt)"
+  The assertion contains function call "fn_crc5_nr(debug_pkt)" which can have 
+  side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 932
+"debug_pkt"
+  Non-sampled variable "debug_pkt" is used in action block of assertion.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBDevice.svp, 942
+_USBAnalyzer, "fn_crc16_nr(debug_pkt)"
+  The assertion contains function call "fn_crc16_nr(debug_pkt)" which can have
+  side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 943
+"debug_pkt.crc16"
+  Non-sampled variable "debug_pkt.crc16" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 943
+"debug_pkt"
+  Non-sampled variable "debug_pkt" is used in action block of assertion.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 943
+"crc16"
+  Non-sampled variable "crc16" is used in action block of assertion.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBDevice.svp, 946
+"fn_crc16_nr(debug_pkt)"
+  The assertion contains function call "fn_crc16_nr(debug_pkt)" which can have
+  side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-NSVU] Non-sampled variable used
+USBDevice.svp, 943
+"debug_pkt"
+  Non-sampled variable "debug_pkt" is used in action block of assertion.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 137
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 165
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 170
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 188
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 193
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 231
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 236
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 278
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 300
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 350
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 424
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 429
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 435
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 491
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 496
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 502
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 545
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 556
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 561
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 583
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 594
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-AECASR] Assertion evaluation can affect simulation results
+USBTB.sv, 599
+USBTB, "$finish;"
+  The assertion contains task call "$finish;" which can have side effects.
+  Shutting of this assertion may cause change in simulation behavior.
+
+
+Lint-[SVA-CE] Complex expression found
+USBDevice.svp, 865
+_USBAnalyzer, "(~reset_n)"
+  Complex (~reset_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+USBDevice.svp, 874
+_USBAnalyzer, "(~reset_n)"
+  Complex (~reset_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+USBDevice.svp, 881
+_USBAnalyzer, "(~reset_n)"
+  Complex (~reset_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+USBDevice.svp, 888
+_USBAnalyzer, "(~reset_n)"
+  Complex (~reset_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+USBDevice.svp, 897
+_USBAnalyzer, "(~reset_n)"
+  Complex (~reset_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+USBDevice.svp, 906
+_USBAnalyzer, "(~reset_n)"
+  Complex (~reset_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+USBDevice.svp, 916
+_USBAnalyzer, "(~reset_n)"
+  Complex (~reset_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+USBDevice.svp, 927
+_USBAnalyzer, "(~reset_n)"
+  Complex (~reset_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+USBDevice.svp, 938
+_USBAnalyzer, "(~reset_n)"
+  Complex (~reset_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+USBDevice.svp, 949
+_USBAnalyzer, "(~reset_n)"
+  Complex (~reset_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+USBDevice.svp, 995
+_USBAnalyzer, "(~reset_n)"
+  Complex (~reset_n) expression is used with assert property.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBDevice.svp, 16
+
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBDevice.svp, 16
+
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBDevice.svp, 16
+
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBDevice.svp, 16
+
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBDevice.svp, 16
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 16
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 16
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 16
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 311
+
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBDevice.svp, 311
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 311
+
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBDevice.svp, 372
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 372
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 372
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 372
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 372
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 372
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 372
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 372
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 372
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 372
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 372
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 372
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 372
+
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBDevice.svp, 516
+
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBDevice.svp, 516
+
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBDevice.svp, 516
+
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBDevice.svp, 516
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 516
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 516
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 516
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 516
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 516
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 516
+
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBDevice.svp, 516
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 516
+
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBDevice.svp, 516
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 516
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 516
+
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBDevice.svp, 698
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 698
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 698
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 698
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 698
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 698
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 698
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 698
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 698
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 698
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 698
+
+
+
+Lint-[ULCO] Unequal length in comparison operator
+USBDevice.svp, 698
+
+
+
+Warning-[SVA-IAU] Invalid argument used
+USBDevice.svp, 879
+_USBAnalyzer, "$fatal("!!! %m: USB analyzer detected no bus turnaround cycle");"
+  The first argument ""!!! %m: USB analyzer detected no bus turnaround cycle""
+  used in '$fatal' is not valid. Only integer values 0,1 and 2 are allowed. 
+  Refer to SystemVerilog LRM (1800-2012), section 20.10.
+
+
+Warning-[SVA-IAU] Invalid argument used
+USBDevice.svp, 894
+_USBAnalyzer, "$fatal("!!! %m: USB analyzer detected invalid SYNC %b", debug_pkt.sync);"
+  The first argument ""!!! %m: USB analyzer detected invalid SYNC %b"" used in
+  '$fatal' is not valid. Only integer values 0,1 and 2 are allowed. 
+  Refer to SystemVerilog LRM (1800-2012), section 20.10.
+
+
+Warning-[SVA-IAU] Invalid argument used
+USBDevice.svp, 956
+_USBAnalyzer, "$fatal("!!! %m: USB analyzer detected invalid EOP");"
+  The first argument ""!!! %m: USB analyzer detected invalid EOP"" used in 
+  '$fatal' is not valid. Only integer values 0,1 and 2 are allowed. 
+  Refer to SystemVerilog LRM (1800-2012), section 20.10.
+
+
+Lint-[SVA-DIU] Disable iff used
+USBDevice.svp, 865
+_USBAnalyzer
+  Disable iff is used in assertion 'chk_valid_bus: assert property(disable iff
+  ((~reset_n)) (1 |-> (current_bus inside {USBPkg::valid_usb_buses}))) else 
+  begin
+  $$sva_internal_error(3, 3);
+  begin
+  $error("!!! %m: USB analyzer detected invalid bus state DP=%b DM=%b", 
+  wires.DP, wires.DM);
+  end
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+USBDevice.svp, 874
+_USBAnalyzer
+  Disable iff is used in assertion 'chk_bus_turnaround: assert 
+  property(disable iff ((~reset_n)) ($rose(chk_eop) |-> ( ##3 (current_bus == 
+  USB_J)))) else begin
+  $$sva_internal_error(4, 3);
+  $fatal("!!! %m: USB analyzer detected no bus turnaround cycle");
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+USBDevice.svp, 881
+_USBAnalyzer
+  Disable iff is used in assertion 'chk_stuffing: assert property(disable iff 
+  ((~reset_n)) (((en_stuff & serial_raw) [* 6]) |=> (~serial_raw))) else begin
+  $$sva_internal_error(3, 3);
+  $error("!!! %m: USB analyzer did not detect stuffed bit");
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+USBDevice.svp, 888
+_USBAnalyzer
+  Disable iff is used in assertion 'chk_sync: assert property(disable iff 
+  ((~reset_n)) ($rose(ld_sync) |-> ( ##8 (debug_pkt.sync == 8'b1)))) else 
+  begin
+  $$sva_internal_error(4, 3);
+  begin
+  $fatal("!!! %m: USB analyzer detected invalid SYNC %b", debug_pkt.sync);
+  end
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+USBDevice.svp, 897
+_USBAnalyzer
+  Disable iff is used in assertion 'chk_pid: assert property(disable iff 
+  ((~reset_n)) ($rose(ld_pid) |-> ( ##4 (debug_pkt.pid inside 
+  {USBPkg::valid_pids})))) else begin
+  $$sva_internal_error(3, 3);
+  begin
+  $error("!!! %m: USB analyzer detected invalid PID %b", debug_pkt.pid);
+  end
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+USBDevice.svp, 906
+_USBAnalyzer
+  Disable iff is used in assertion 'chk_pid_n: assert property(disable iff 
+  ((~reset_n)) ($rose(ld_pid_n) |-> ( ##4 (debug_pkt.pid_n == 
+  (~debug_pkt.pid))))) else begin
+  $$sva_internal_error(3, 3);
+  begin
+  $error("!!! %m: USB analyzer detected invalid PID %b PID_N %b", 
+  debug_pkt.pid, debug_pkt.pid_n);
+  end
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+USBDevice.svp, 916
+_USBAnalyzer
+  Disable iff is used in assertion 'chk_addr: assert property(disable iff 
+  ((~reset_n)) ($rose(ld_endp) |-> (debug_pkt.addr == 7'h3f))) else begin
+  $$sva_internal_error(3, 3);
+  begin
+  $error({"!!! %m: USB analyzer detected token packet with invalid device ", 
+  "address %0h"}, debug_pkt.addr);
+  end
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+USBDevice.svp, 927
+_USBAnalyzer
+  Disable iff is used in assertion 'chk_crc5: assert property(disable iff 
+  ((~reset_n)) ($rose(ld_crc5) ##1 ($fell(ld_crc5) [-> 1]) |-> (debug_pkt.crc5
+  == fn_crc5_nr(debug_pkt)))) else begin
+  $$sva_internal_error(3, 3);
+  begin
+  $error({"!!! %m: USB analyzer detected token packet with invalid CRC5 %h ", 
+  "(correct %h)"}, debug_pkt.crc5, fn_crc5_nr(debug_pkt));
+  end
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+USBDevice.svp, 938
+_USBAnalyzer
+  Disable iff is used in assertion 'chk_crc16: assert property(disable iff 
+  ((~reset_n)) ($rose(ld_crc16) ##1 ($fell(ld_crc16) [-> 1]) |-> 
+  (debug_pkt.crc16 == fn_crc16_nr(debug_pkt)))) else begin
+  $$sva_internal_error(3, 3);
+  begin
+  $error({"!!! %m: USB analyzer detected data packet with invalid CRC16 %h ", 
+  "(correct %h)"}, debug_pkt.crc16, fn_crc16_nr(debug_pkt));
+  end
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+USBDevice.svp, 949
+_USBAnalyzer
+  Disable iff is used in assertion 'chk_eop_bus: assert property(disable iff 
+  ((~reset_n)) ($rose(chk_eop) |-> (current_bus == USB_SE0) ##1 (current_bus 
+  == USB_SE0) ##1 (current_bus == USB_J))) else begin
+  $$sva_internal_error(4, 3);
+  $fatal("!!! %m: USB analyzer detected invalid EOP");
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+USBDevice.svp, 995
+_USBAnalyzer
+  Disable iff is used in assertion 'chk_protocol: assert property(disable iff 
+  ((~reset_n)) ((((($rose(done_receiving) && (~recv_error)) && (debug_pkt.pid 
+  == PID_OUT)) && (debug_pkt.addr == 7'h3f)) && (debug_pkt.endp == 4'h4)) |=> 
+  ((seq_error or seq_out_timeout) [* 0:7]) ##1 ($fell(en_pkt_inbound) [-> 1]) 
+  ##[(3 - 1):3] ((($rose(done_receiving) && (~recv_error)) && (debug_pkt.pid 
+  == PID_DATA0)) && (debug_pkt.payload[47:0] == '0)) ##1 
+  ($fell(en_pkt_inbound) [-> 1]) ##(3 - 1) ($rose(done_receiving) && 
+  (debug_pkt.pid == PID_ACK)) ##1 ($fell(en_pkt_inbound) [-> 1]) ##(3 - 1) 
+  ((($rose(done_receiving) && (~recv_error)) && (debug_pkt.pid inside {PID_IN,
+  PID_OUT})) && (debug_pkt.endp == 4'h8)) ##1 (((seq_error or seq_in_timeout) 
+  or seq_out_timeout) [* 0:7]) ##1 ($fell(en_pkt_inbound) [-> 1]) ##[(3 - 
+  1):3] (($rose(done_receiving) && (~recv_error)) && (debug_pkt.pid == 
+  PID_DATA0)) ##1 ($fell(en_pkt_inbound) [-> 1]) ##(3 - 1) 
+  ($rose(done_receiving) && (debug_pkt.pid == PID_ACK)))) else begin
+  $$sva_internal_error(3, 3);
+  begin
+  $error("!!! %m: USB analyzer detected invalid sequence of packets");
+  end
+  end'
+
+
+Lint-[UI] Unused input
+USBHost.sv, 14
+  Following is an unused input.
+  Source info: reset_n
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBHost.sv, 29
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: payload <= 'b0;
+  Expression: payload
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBHost.sv, 30
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: start <= 1;
+  Expression: start
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBHost.sv, 32
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: start <= 0;
+  Expression: start
+
+
+Lint-[UI] Unused input
+USBHost.sv, 41
+  Following is an unused input.
+  Source info: mempage
+
+
+Lint-[UI] Unused input
+USBHost.sv, 54
+  Following is an unused input.
+  Source info: mempage
+
+
+Lint-[UI] Unused input
+USBHost.sv, 55
+  Following is an unused input.
+  Source info: data
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBTB.sv, 148
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: mempage = $urandom;
+  Expression: mempage
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBTB.sv, 269
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: mempage = $urandom;
+  Expression: mempage
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBTB.sv, 291
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: mempage = $urandom;
+  Expression: mempage
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBTB.sv, 334
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: mempage = $urandom;
+  Expression: mempage
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBTB.sv, 396
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: mempage = $urandom;
+  Expression: mempage
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+USBTB.sv, 460
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: mempage = $urandom;
+  Expression: mempage
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+bitStuffing.sv, 23
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: ones_count <= (ones_count + 1);
+  Expression: ones_count
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+bitStuffing.sv, 26
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: ones_count <= 0;
+  Expression: ones_count
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+crcGen.sv, 125
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: crc = 'b0;
+  Expression: crc
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+crcGen.sv, 136
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: preset_L = 1;
+  Expression: preset_L
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+crcGen.sv, 137
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: crcDataReady = 0;
+  Expression: crcDataReady
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+crcGen.sv, 141
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: preset_L = 0;
+  Expression: preset_L
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+crcGen.sv, 142
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: crcDataReady = 0;
+  Expression: crcDataReady
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+crcGen.sv, 148
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: crcDataReady = 1;
+  Expression: crcDataReady
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+crcGen.sv, 149
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: preset_L = 1;
+  Expression: preset_L
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+crcGen.sv, 153
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: crcDataReady = 0;
+  Expression: crcDataReady
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+crcGen.sv, 154
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: preset_L = 1;
+  Expression: preset_L
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+feederArray.sv, 30
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 7-bit LHS target:
+  Source info: offset <= 0;
+  Expression: offset
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+feederArray.sv, 33
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 7-bit LHS target:
+  Source info: offset <= (offset + 1);
+  Expression: offset
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+library.sv, 175
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 8-bit LHS target:
+  Source info: Q <= (Q + 1);
+  Expression: Q
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+library.sv, 178
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 8-bit LHS target:
+  Source info: Q <= (Q - 1);
+  Expression: Q
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+library.sv, 203
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 8-bit LHS target:
+  Source info: Q <= (Q + 1);
+  Expression: Q
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+library.sv, 206
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 8-bit LHS target:
+  Source info: Q <= (Q - 1);
+  Expression: Q
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+library.sv, 232
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 8-bit LHS target:
+  Source info: Q <= (Q + 5);
+  Expression: Q
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+library.sv, 235
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 8-bit LHS target:
+  Source info: Q <= (Q - 5);
+  Expression: Q
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+library.sv, 261
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 8-bit LHS target:
+  Source info: Q <= (Q + 2);
+  Expression: Q
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+library.sv, 264
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 8-bit LHS target:
+  Source info: Q <= (Q - 2);
+  Expression: Q
+
+
+Lint-[UI] Unused input
+library.sv, 340
+  Following is an unused input.
+  Source info: by
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+nrzi.sv, 28
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: nrzi_out <= 1;
+  Expression: nrzi_out
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+nrzi.sv, 31
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: nrzi_out <= 0;
+  Expression: nrzi_out
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+nrzi.sv, 37
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: nrzi_out <= 0;
+  Expression: nrzi_out
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+nrzi.sv, 40
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: nrzi_out <= 1;
+  Expression: nrzi_out
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+phaseTracker.sv, 14
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 7-bit LHS target:
+  Source info: count <= 0;
+  Expression: count
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+phaseTracker.sv, 20
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 7-bit LHS target:
+  Source info: count <= (count + 1);
+  Expression: count
+
+
+Lint-[ULCO] Unequal length in comparison operator
+phaseTracker.sv, 63
+phaseTracker, "(count == (SYNC_LIMIT - 1))"
+  A left 7-bit expression is compared to a right 32-bit expression.
+  Comparing 'count' of type logic [(7 - 1):0]
+  with '(SYNC_LIMIT - 1)' of type int.
+
+
+Lint-[ULCO] Unequal length in comparison operator
+phaseTracker.sv, 64
+phaseTracker, "(count == (PID_LIMIT - 1))"
+  A left 7-bit expression is compared to a right 32-bit expression.
+  Comparing 'count' of type logic [(7 - 1):0]
+  with '(PID_LIMIT - 1)' of type int.
+
+
+Lint-[ULCO] Unequal length in comparison operator
+phaseTracker.sv, 65
+phaseTracker, "(count == (PAYLOAD_LIMIT - 1))"
+  A left 7-bit expression is compared to a right 32-bit expression.
+  Comparing 'count' of type logic [(7 - 1):0]
+  with '(PAYLOAD_LIMIT - 1)' of type int.
+
+
+Lint-[ULCO] Unequal length in comparison operator
+phaseTracker.sv, 66
+phaseTracker, "(count == (CRC16_LIMIT - 1))"
+  A left 7-bit expression is compared to a right 32-bit expression.
+  Comparing 'count' of type logic [(7 - 1):0]
+  with '(CRC16_LIMIT - 1)' of type int.
+
+
+Lint-[ULCO] Unequal length in comparison operator
+phaseTracker.sv, 74
+phaseTracker, "(count == (SYNC_LIMIT - 1))"
+  A left 7-bit expression is compared to a right 32-bit expression.
+  Comparing 'count' of type logic [(7 - 1):0]
+  with '(SYNC_LIMIT - 1)' of type int.
+
+
+Lint-[ULCO] Unequal length in comparison operator
+phaseTracker.sv, 75
+phaseTracker, "(count == (PID_LIMIT - 1))"
+  A left 7-bit expression is compared to a right 32-bit expression.
+  Comparing 'count' of type logic [(7 - 1):0]
+  with '(PID_LIMIT - 1)' of type int.
+
+
+Lint-[ULCO] Unequal length in comparison operator
+phaseTracker.sv, 76
+phaseTracker, "(count == (ADDR_LIMIT - 1))"
+  A left 7-bit expression is compared to a right 32-bit expression.
+  Comparing 'count' of type logic [(7 - 1):0]
+  with '(ADDR_LIMIT - 1)' of type int.
+
+
+Lint-[ULCO] Unequal length in comparison operator
+phaseTracker.sv, 77
+phaseTracker, "(count == (ENDP_LIMIT - 1))"
+  A left 7-bit expression is compared to a right 32-bit expression.
+  Comparing 'count' of type logic [(7 - 1):0]
+  with '(ENDP_LIMIT - 1)' of type int.
+
+
+Lint-[ULCO] Unequal length in comparison operator
+phaseTracker.sv, 78
+phaseTracker, "(count == (CRC5_LIMIT - 1))"
+  A left 7-bit expression is compared to a right 32-bit expression.
+  Comparing 'count' of type logic [(7 - 1):0]
+  with '(CRC5_LIMIT - 1)' of type int.
+
+
+Lint-[ULCO] Unequal length in comparison operator
+phaseTracker.sv, 87
+phaseTracker, "(count == (SYNC_LIMIT - 1))"
+  A left 7-bit expression is compared to a right 32-bit expression.
+  Comparing 'count' of type logic [(7 - 1):0]
+  with '(SYNC_LIMIT - 1)' of type int.
+
+
+Lint-[ULCO] Unequal length in comparison operator
+phaseTracker.sv, 88
+phaseTracker, "(count == (PID_LIMIT - 1))"
+  A left 7-bit expression is compared to a right 32-bit expression.
+  Comparing 'count' of type logic [(7 - 1):0]
+  with '(PID_LIMIT - 1)' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+testTB.sv, 7
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: clock = 0;
+  Expression: clock
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+usbHostNew.sv, 157
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 7-bit LHS target:
+  Source info: expBitAmount = DATA0_BITS;
+  Expression: expBitAmount
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+usbHostNew.sv, 158
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 7-bit LHS target:
+  Source info: expBitAmount = OUT_IN_BITS;
+  Expression: expBitAmount
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+usbHostNew.sv, 159
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 7-bit LHS target:
+  Source info: expBitAmount = ACK_NACK_BITS;
+  Expression: expBitAmount
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+usbHostNew.sv, 239
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: local_reset_n = 0;
+  Expression: local_reset_n
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+usbHostNew.sv, 241
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: stopSending = 1;
+  Expression: stopSending
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+usbHostNew.sv, 246
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: local_reset_n = 1;
+  Expression: local_reset_n
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+usbHostNew.sv, 247
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: stopSending = 0;
+  Expression: stopSending
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+usbHostNew.sv, 252
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: local_reset_n = 0;
+  Expression: local_reset_n
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+usbHostNew.sv, 253
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: stopSending = 1;
+  Expression: stopSending
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+usbHostNew.sv, 257
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: stopSending = 1;
+  Expression: stopSending
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+usbHostNew.sv, 259
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: local_reset_n = 0;
+  Expression: local_reset_n
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+usbHostNew.sv, 311
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 8-bit wide expression is assigned to a 80-bit LHS target:
+  Source info: init = ((((8'b1 << (80 - 8)) + ($unit::errorPID(pktType) << 
+  ((80 - 8) - (4 << 1)))) + ($unit::revSeven(7'h3f) << (((80 - 8) - (4 << 1)) 
+  - 7))) + ($unit::revFo ...
+  Expression: init
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+usbHostNew.sv, 321
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 64-bit wide expression is assigned to a 80-bit LHS target:
+  Source info: init = (((8'b1 << (80 - 8)) + ($unit::errorPID(pktType) << ((80
+  - 8) - (4 << 1)))) + ($unit::revSixtyFour(payload) << (((80 - 8) - (4 << 1))
+  - 64)));
+  Expression: init
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+usbHostNew.sv, 329
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 8-bit wide expression is assigned to a 80-bit LHS target:
+  Source info: init = ((8'b1 << (80 - 8)) + ($unit::errorPID(pktType) << ((80 
+  - 8) - (4 << 1))));
+  Expression: init
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+usbHostNew.sv, 334
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 80-bit LHS target:
+  Source info: init = 'b0;
+  Expression: init
+
+
+Lint-[SVA-LDA] Large delay assertion
+USBDevice.svp, 985
+_USBAnalyzer, "((current_bus == USB_SE0) [* 256])"
+  Large delay or repetition 256 has been found in assertion.
+  ((current_bus == USB_SE0) [* 256])
+
+
+Note-[SVA-LDRF] Large delay or repetition found.
+USBDevice.svp, 995
+  Large delay or repetition found (((current_bus == USB_SE0) [* 256])). VCS 
+  will optimize compile time. However it may affect runtime.
+
+
+Lint-[SVA-LDA] Large delay assertion
+USBDevice.svp, 990
+_USBAnalyzer, "((current_bus == USB_SE0) ##[(256 - 20):((2 * 256) - 1)] ($rose(done_receiving) && (debug_pkt.pid == PID_NAK)))"
+  Large delay or repetition 236 has been found in assertion.
+  ((current_bus == USB_SE0) ##[(256 - 20):((2 * 256) - 1)] 
+  ($rose(done_receiving) && (debug_pkt.pid == PID_NAK)))
+
+
+Note-[SVA-LDRF] Large delay or repetition found.
+USBDevice.svp, 995
+  Large delay or repetition found (((current_bus == USB_SE0) ##[(256 - 20):((2
+  * 256) - 1)] ($rose(done_receiving) && (debug_pkt.pid == PID_NAK)))). VCS 
+  will optimize compile time. However it may affect runtime.
+
+
+Lint-[SVA-LDA] Large delay assertion
+USBDevice.svp, 985
+_USBAnalyzer, "((current_bus == USB_SE0) [* 256])"
+  Large delay or repetition 256 has been found in assertion.
+  ((current_bus == USB_SE0) [* 256])
+
+
+Note-[SVA-LDRF] Large delay or repetition found.
+USBDevice.svp, 995
+  Large delay or repetition found (((current_bus == USB_SE0) [* 256])). VCS 
+  will optimize compile time. However it may affect runtime.
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 597
+USBTB
+  Unnamed Assertion found in design
+  \assert(USBTB.device_inst.device_idle) else begin
+  $error("Device is still attempting to finish the transaction");
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert(USBTB.device_inst.device_idle) else begin
+  $error("Device is still attempting to finish the transaction");
+  $finish;
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 592
+USBTB
+  Unnamed Assertion found in design
+  \assert((~host_success)) else begin
+  $error("Host mistakenly reported successful write");
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert((~host_success)) else begin
+  $error("Host mistakenly reported successful write");
+  $finish;
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 578
+USBTB
+  Unnamed Assertion found in design
+  \assert(USBTB.device_inst.device_null_tx)begin
+  $display("%m @%0t: Device successfully aborted the transaction", $time);
+  end
+   else begin
+  $error("Device unsuccessfully aborted the transaction");
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 575
+"vcs_18"
+  Assertion found in unnamed block.
+  \assert(USBTB.device_inst.device_null_tx)begin
+  $display("%m @%0t: Device successfully aborted the transaction", $time);
+  end
+   else begin
+  $error("Device unsuccessfully aborted the transaction");
+  $finish;
+  end
+
+
+Lint-[SVA-PAB] Pass action block
+USBTB.sv, 578
+USBTB
+  'assert(USBTB.device_inst.device_null_tx)begin
+  $display("%m @%0t: Device successfully aborted the transaction", $time);
+  end
+   else begin
+  $error("Device unsuccessfully aborted the transaction");
+  $finish;
+  end' uses a pass action block.
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 559
+USBTB
+  Unnamed Assertion found in design
+  \assert(USBTB.device_inst.device_idle) else begin
+  $error("Device is still attempting to finish the transaction");
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert(USBTB.device_inst.device_idle) else begin
+  $error("Device is still attempting to finish the transaction");
+  $finish;
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 554
+USBTB
+  Unnamed Assertion found in design
+  \assert((~host_success)) else begin
+  $error("Host mistakenly reported successful write");
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert((~host_success)) else begin
+  $error("Host mistakenly reported successful write");
+  $finish;
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 540
+USBTB
+  Unnamed Assertion found in design
+  \assert(USBTB.device_inst.device_null_tx)begin
+  $display("%m @%0t: Device successfully aborted the transaction", $time);
+  end
+   else begin
+  $error("Device unsuccessfully aborted the transaction");
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 537
+"vcs_15"
+  Assertion found in unnamed block.
+  \assert(USBTB.device_inst.device_null_tx)begin
+  $display("%m @%0t: Device successfully aborted the transaction", $time);
+  end
+   else begin
+  $error("Device unsuccessfully aborted the transaction");
+  $finish;
+  end
+
+
+Lint-[SVA-PAB] Pass action block
+USBTB.sv, 540
+USBTB
+  'assert(USBTB.device_inst.device_null_tx)begin
+  $display("%m @%0t: Device successfully aborted the transaction", $time);
+  end
+   else begin
+  $error("Device unsuccessfully aborted the transaction");
+  $finish;
+  end' uses a pass action block.
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 499
+USBTB
+  Unnamed Assertion found in design
+  \assert((USBTB.device_inst.memory[mempage] == data_to_host)) else begin
+  $error("Device wrote the wrong value to memory[%x]=%x", mempage, 
+  data_to_host);
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert((USBTB.device_inst.memory[mempage] == data_to_host)) else begin
+  $error("Device wrote the wrong value to memory[%x]=%x", mempage, 
+  data_to_host);
+  $finish;
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 494
+USBTB
+  Unnamed Assertion found in design
+  \assert(USBTB.device_inst.device_idle) else begin
+  $error("Device is still attempting to finish the transaction");
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert(USBTB.device_inst.device_idle) else begin
+  $error("Device is still attempting to finish the transaction");
+  $finish;
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 489
+USBTB
+  Unnamed Assertion found in design
+  \assert(host_success) else begin
+  $error("Host reported unsuccessful write");
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert(host_success) else begin
+  $error("Host reported unsuccessful write");
+  $finish;
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 432
+USBTB
+  Unnamed Assertion found in design
+  \assert((USBTB.device_inst.memory[mempage] == data_from_host)) else begin
+  $error("Host read the wrong value from memory[%x]=%x (saw %x)", mempage, 
+  data_to_host, data_from_host);
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert((USBTB.device_inst.memory[mempage] == data_from_host)) else begin
+  $error("Host read the wrong value from memory[%x]=%x (saw %x)", mempage, 
+  data_to_host, data_from_host);
+  $finish;
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 427
+USBTB
+  Unnamed Assertion found in design
+  \assert(USBTB.device_inst.device_idle) else begin
+  $error("Device is still attempting to finish the transaction");
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert(USBTB.device_inst.device_idle) else begin
+  $error("Device is still attempting to finish the transaction");
+  $finish;
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 422
+USBTB
+  Unnamed Assertion found in design
+  \assert(host_success) else begin
+  $error("Host reported unsuccessful read");
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert(host_success) else begin
+  $error("Host reported unsuccessful read");
+  $finish;
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 348
+USBTB
+  Unnamed Assertion found in design
+  \assert((~USBTB.device_inst.device_null_tx)) else begin
+  $error("Device aborted the transaction early");
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 345
+"vcs_6"
+  Assertion found in unnamed block.
+  \assert((~USBTB.device_inst.device_null_tx)) else begin
+  $error("Device aborted the transaction early");
+  $finish;
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 295
+USBTB
+  Unnamed Assertion found in design
+  \assert((host_success & USBTB.device_inst.device_idle)) else begin
+  $error({"Read from memory[%]=%x was unsuccessful due to protocol ", 
+  "error"}, mempage, data_to_host);
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert((host_success & USBTB.device_inst.device_idle)) else begin
+  $error({"Read from memory[%]=%x was unsuccessful due to protocol ", 
+  "error"}, mempage, data_to_host);
+  $finish;
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 273
+USBTB
+  Unnamed Assertion found in design
+  \assert((host_success & USBTB.device_inst.device_idle)) else begin
+  $error({"Write to memory[%x]=%x was unsuccessful due to protocol ", 
+  "error"}, mempage, data_to_host);
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert((host_success & USBTB.device_inst.device_idle)) else begin
+  $error({"Write to memory[%x]=%x was unsuccessful due to protocol ", 
+  "error"}, mempage, data_to_host);
+  $finish;
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 239
+USBTB
+  Unnamed Assertion found in design
+  \assert((USBTB.device_inst.memory[mempage] == crc_edge)) else $error("Device
+  wrote the wrong value to memory[%x]=%x", mempage, 
+  USBTB.device_inst.memory[mempage]);
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert((USBTB.device_inst.memory[mempage] == crc_edge)) else $error("Device
+  wrote the wrong value to memory[%x]=%x", mempage, 
+  USBTB.device_inst.memory[mempage]);
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 234
+USBTB
+  Unnamed Assertion found in design
+  \assert(USBTB.device_inst.device_idle) else begin
+  $error("Device is still attempting to finish the transaction");
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert(USBTB.device_inst.device_idle) else begin
+  $error("Device is still attempting to finish the transaction");
+  $finish;
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 229
+USBTB
+  Unnamed Assertion found in design
+  \assert(host_success) else begin
+  $error("Host reported unsuccessful write");
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert(host_success) else begin
+  $error("Host reported unsuccessful write");
+  $finish;
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 196
+USBTB
+  Unnamed Assertion found in design
+  \assert((data_from_host == data_to_host)) else $error("Host read the wrong 
+  value from memory[%x]=%x (saw %x)", mempage, data_to_host, data_from_host);
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert((data_from_host == data_to_host)) else $error("Host read the wrong 
+  value from memory[%x]=%x (saw %x)", mempage, data_to_host, data_from_host);
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 191
+USBTB
+  Unnamed Assertion found in design
+  \assert(USBTB.device_inst.device_idle) else begin
+  $error("Device is still attempting to finish the transaction");
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert(USBTB.device_inst.device_idle) else begin
+  $error("Device is still attempting to finish the transaction");
+  $finish;
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 186
+USBTB
+  Unnamed Assertion found in design
+  \assert(host_success) else begin
+  $error("Host reported unsuccessful read");
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert(host_success) else begin
+  $error("Host reported unsuccessful read");
+  $finish;
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 173
+USBTB
+  Unnamed Assertion found in design
+  \assert((USBTB.device_inst.memory[mempage] == data_to_host)) else 
+  $error("Device wrote the wrong value to memory[%x]=%x", mempage, 
+  USBTB.device_inst.memory[mempage]);
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert((USBTB.device_inst.memory[mempage] == data_to_host)) else 
+  $error("Device wrote the wrong value to memory[%x]=%x", mempage, 
+  USBTB.device_inst.memory[mempage]);
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 168
+USBTB
+  Unnamed Assertion found in design
+  \assert(USBTB.device_inst.device_idle) else begin
+  $error("Device is still attempting to finish the transaction");
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert(USBTB.device_inst.device_idle) else begin
+  $error("Device is still attempting to finish the transaction");
+  $finish;
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 163
+USBTB
+  Unnamed Assertion found in design
+  \assert(host_success) else begin
+  $error("Host reported unsuccessful write");
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert(host_success) else begin
+  $error("Host reported unsuccessful write");
+  $finish;
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+USBTB.sv, 135
+USBTB
+  Unnamed Assertion found in design
+  \assert(USBTB.device_inst.device_idle) else begin
+  $error("Device is still attempting to finish the transaction");
+  $finish;
+  end
+
+
+Lint-[SVA-UB] Unnamed block
+USBTB.sv, 104
+"vcs_29"
+  Assertion found in unnamed block.
+  \assert(USBTB.device_inst.device_idle) else begin
+  $error("Device is still attempting to finish the transaction");
+  $finish;
+  end
+
+Notice: Ports coerced to inout, use -notice for details
+Starting vcs inline pass...
+
+
+Note-[VCS_PARAL] Parallel code-gen enabled
+  VCS is running with parallel code generation(-j)...
+
+32 modules and 0 UDP read.
+recompiling module hexDisplay0
+recompiling module hexDisplay1
+recompiling module hexDisplay2
+recompiling module hexDisplay3
+recompiling module _USBTerminal
+recompiling module <protected>
+recompiling module Counter
+recompiling module Counter_async
+recompiling module CountFive
+recompiling module TwoCounter
+recompiling module USBDevice
+recompiling module USBTB
+recompiling module TB
+recompiling module MagComp
+recompiling module ShiftRegister_PIPO
+recompiling module Memory
+recompiling module USBHost
+recompiling module Register
+recompiling module Register_async
+recompiling module Register_async_customReset
+recompiling module ShiftRegister_SIPO
+recompiling module BarrelShiftRegister
+recompiling module Decoder
+recompiling module OffsetCheck
+recompiling module Adder
+recompiling module _USBAnalyzer
+recompiling module Synchronizer
+recompiling module BusDriver
+recompiling package USBPkg
+recompiling module Multiplexer
+recompiling module Mux2to1
+recompiling module USBWires
+All of 32 modules done
+make[1]: Entering directory `/afs/andrew.cmu.edu/usr15/arnavsab/private/18341/p5-usb-1_arnavsab_www2/csrc'
+make[1]: Leaving directory `/afs/andrew.cmu.edu/usr15/arnavsab/private/18341/p5-usb-1_arnavsab_www2/csrc'
+make[1]: Entering directory `/afs/andrew.cmu.edu/usr15/arnavsab/private/18341/p5-usb-1_arnavsab_www2/csrc'
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/afs/ece.cmu.edu/support/synopsys/synopsys.release/T-Foundation/vcs/T-2022.06/linux64/lib -L/afs/ece.cmu.edu/support/synopsys/synopsys.release/T-Foundation/vcs/T-2022.06/linux64/lib  -Wl,-rpath-link=./   objs/amcQw_d.o   _30312_archive_1.so _30313_archive_1.so _30314_archive_1.so _30315_archive_1.so _30316_archive_1.so _30317_archive_1.so _30318_archive_1.so _30319_archive_1.so  SIM_l.o       rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lnuma -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /afs/ece.cmu.edu/support/synopsys/synopsys.release/T-Foundation/vcs/T-2022.06/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive          /afs/ece.cmu.edu/support/synopsys/synopsys.release/T-Foundation/vcs/T-2022.06/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+make[1]: Leaving directory `/afs/andrew.cmu.edu/usr15/arnavsab/private/18341/p5-usb-1_arnavsab_www2/csrc'
+CPU time: 1.447 seconds to compile + .398 seconds to elab + .479 seconds to link

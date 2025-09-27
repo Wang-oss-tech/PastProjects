@@ -1,0 +1,8 @@
+build/
+
+# ignore all files in FreeRTOS/ except for the Source
+FreeRTOS/*
+!FreeRTOS/Source/
+
+# MacOS specific
+.DS_Store

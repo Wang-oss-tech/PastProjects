@@ -1,0 +1,142 @@
+Chronologic VCS simulator copyright 1991-2022
+Contains Synopsys proprietary information.
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Apr 21 16:39 2024
+
+-----------------------------------------------------------
+ <Started> Simple Read/Write Test
+-----------------------------------------------------------
+
+USBTB @5: TB->Host writing mempage 0f21 and data 40aa11b7682df6d8
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @45: USB analyzer is interpreting a new packet
+Raw Bus Traffic: JKJKJKKKJKJKKKKKJJKJKJKJJKJKJKK00J
+Bitstream:       0000001100001111010000001000001
+Packet: '{sync:'h1, pid:'h1, pid_n:'he, addr:'h5, endp:'h4, payload:'hxxxxxxxxxxxxxxxx, crc5:'h10, crc16:'hxxxx}
+USBTB.device_inst.PROTECTED.unnamed$$_0 @375: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @415: USB analyzer is interpreting a new packet
+Raw Bus Traffic: JKJKJKKKKJKJKKKKJKJKKJKKKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKJKJKJJKJKJKKJK00J
+Bitstream:       00000011100001110000100111100000000000000000000000000000000000000000000000000001100000100000100
+Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'hf21, crc5:'hxx, crc16:'h2083}
+USBTB.device_inst.PROTECTED.unnamed$$_0 @1385: USB analyzer detected *DATA0* with PAYLOAD=0000000000000f21 CRC16=2083 (correct 2083)
+=================================================
+
+
+"USBDevice.svp", 995: USBTB.device_inst.PROTECTED.chk_protocol: started at 385s failed at 1405s
+	Offending '<Protected>'
+Error: "USBDevice.svp", 995: USBTB.device_inst.PROTECTED.chk_protocol: at time 1405
+!!! USBTB.device_inst.PROTECTED.chk_protocol: USB analyzer detected invalid sequence of packets
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @1735: USB analyzer is interpreting a new packet
+Raw Bus Traffic: JKJKJKKJJKJJKKK00J
+Bitstream:       000000101001011
+Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
+USBTB.device_inst.PROTECTED.unnamed$$_0 @1905: USB analyzer detected *ACK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @1965: USB analyzer is interpreting a new packet
+Raw Bus Traffic: JKJKJKKKJKJKKKKKJJKJKJKJKKJJJJK00J
+Bitstream:       0000001100001111010000000101110
+Packet: '{sync:'h1, pid:'h1, pid_n:'he, addr:'h5, endp:'h8, payload:'hxxxxxxxxxxxxxxxx, crc5:'he, crc16:'hxxxx}
+USBTB.device_inst.PROTECTED.unnamed$$_0 @2295: USB analyzer detected *OUT* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @2335: USB analyzer is interpreting a new packet
+Raw Bus Traffic: JKJKJKKKKJKJKKKJKJJJKKKJJJKKKKKKJJJKKJKJKJJKKKJJJJKKKJJJKJKKJKJKKJJKKJJKJKJKJJKJJKKJKKJKJJKKJJK00J
+Bitstream:       00000011100001100011011011011111011010000010110111011011000100001010101000000100101001000101010
+Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h40aa11b7682df6d8, crc5:'hxx, crc16:'h544a}
+USBTB.device_inst.PROTECTED.unnamed$$_0 @3305: USB analyzer detected *DATA0* with PAYLOAD=40aa11b7682df6d8 CRC16=544a (correct 544a)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @3535: USB analyzer is interpreting a new packet
+Raw Bus Traffic: JKJKJKKJJKJJKKK00J
+Bitstream:       000000101001011
+Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
+USBTB.device_inst.PROTECTED.unnamed$$_0 @3705: USB analyzer detected *ACK*
+=================================================
+
+
+"USBTB.sv", 173: USBTB.unnamed$$_3: started at 4725s failed at 4725s
+	Offending '(USBTB.device_inst.memory[mempage] == data_to_host)'
+Error: "USBTB.sv", 173: USBTB.unnamed$$_3: at time 4725
+Device wrote the wrong value to memory[0f21]=0000000000000000
+USBTB @4725: TB->Host reading mempage 0f21
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @4765: USB analyzer is interpreting a new packet
+Raw Bus Traffic: JKJKJKKKJKJKKKKKJJKJKJKJJKJKJKK00J
+Bitstream:       0000001100001111010000001000001
+Packet: '{sync:'h1, pid:'h1, pid_n:'he, addr:'h5, endp:'h4, payload:'hxxxxxxxxxxxxxxxx, crc5:'h10, crc16:'hxxxx}
+USBTB.device_inst.PROTECTED.unnamed$$_0 @5095: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @5135: USB analyzer is interpreting a new packet
+Raw Bus Traffic: JKJKJKKKKJKJKKKKJKJKKJKKKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKJKJKJJKJKJKKJK00J
+Bitstream:       00000011100001110000100111100000000000000000000000000000000000000000000000000001100000100000100
+Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'hf21, crc5:'hxx, crc16:'h2083}
+USBTB.device_inst.PROTECTED.unnamed$$_0 @6105: USB analyzer detected *DATA0* with PAYLOAD=0000000000000f21 CRC16=2083 (correct 2083)
+=================================================
+
+
+"USBDevice.svp", 995: USBTB.device_inst.PROTECTED.chk_protocol: started at 5105s failed at 6125s
+	Offending '<Protected>'
+Error: "USBDevice.svp", 995: USBTB.device_inst.PROTECTED.chk_protocol: at time 6125
+!!! USBTB.device_inst.PROTECTED.chk_protocol: USB analyzer detected invalid sequence of packets
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @6235: USB analyzer is interpreting a new packet
+Raw Bus Traffic: JKJKJKKJJKJJKKK00J
+Bitstream:       000000101001011
+Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
+USBTB.device_inst.PROTECTED.unnamed$$_0 @6405: USB analyzer detected *ACK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @6465: USB analyzer is interpreting a new packet
+Raw Bus Traffic: JKJKJKKKJKKJJJKKJJKJKJKJKKJJJJK00J
+Bitstream:       0000001100101101010000000101110
+Packet: '{sync:'h1, pid:'h9, pid_n:'h6, addr:'h5, endp:'h8, payload:'hxxxxxxxxxxxxxxxx, crc5:'he, crc16:'hxxxx}
+USBTB.device_inst.PROTECTED.unnamed$$_0 @6795: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @7185: USB analyzer is interpreting a new packet
+Raw Bus Traffic: JKJKJKKKKJKJKKKJKJJJKKKJJJKKKKKKJJJKKJKJKJJKKKJJJJKKKJJJKJKKJKJKKJJKKJJKJKJKJJKJJKKJKKJKJJKKJJK00J
+Bitstream:       00000011100001100011011011011111011010000010110111011011000100001010101000000100101001000101010
+Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h40aa11b7682df6d8, crc5:'hxx, crc16:'h544a}
+USBTB.device_inst.PROTECTED.unnamed$$_0 @8155: USB analyzer detected *DATA0* with PAYLOAD=40aa11b7682df6d8 CRC16=544a (correct 544a)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED.unnamed$$_0 @8205: USB analyzer is interpreting a new packet
+Raw Bus Traffic: JKJKJKKJJKJJKKK00J
+Bitstream:       000000101001011
+Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
+USBTB.device_inst.PROTECTED.unnamed$$_0 @8375: USB analyzer detected *ACK*
+=================================================
+
+
+USBTB @9415: Host and device reported successful read
+
+-----------------------------------------------------------
+ <Finished> Simple Read/Write Test
+-----------------------------------------------------------
+
+$finish called from file "USBTB.sv", line 610.
+$finish at simulation time                 9415
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 9415
+CPU Time:      0.430 seconds;       Data structure size:   2.1Mb
+Sun Apr 21 16:39:02 2024

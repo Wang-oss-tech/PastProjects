@@ -1,0 +1,80 @@
+13,37d12
+< // Reverses bit order of a byte input
+< function logic [63 : 0] revSixtyFour
+<   (
+<     input logic [63 : 0] inByte
+<   );
+< 
+<   return {inByte[0], inByte[1], inByte[2], inByte[3], inByte[4], inByte[5], 
+<   inByte[6], inByte[7], 
+<   inByte[8], inByte[9], inByte[10], inByte[11], inByte[12], inByte[13], 
+<   inByte[14], inByte[15],
+<   inByte[16], inByte[17], inByte[18], inByte[19], inByte[20], inByte[21], 
+<   inByte[22], inByte[23],
+<   inByte[24], inByte[25], inByte[26], inByte[27], inByte[28], inByte[29], 
+<   inByte[30], inByte[31],
+<   inByte[32], inByte[33], inByte[34], inByte[35], inByte[36], inByte[37], 
+<   inByte[38], inByte[39], 
+<   inByte[40], inByte[41], inByte[42], inByte[43], inByte[44], inByte[45], 
+<   inByte[46], inByte[47],
+<   inByte[48], inByte[49], inByte[50], inByte[51], inByte[52], inByte[53], 
+<   inByte[54], inByte[55],
+<   inByte[56], inByte[57], inByte[58], inByte[59], inByte[60], inByte[61], 
+<   inByte[62], inByte[63]};
+< 
+< endfunction: revSixtyFour
+< 
+132,150d106
+<   // PARAMETERS FOR KNOWING WHEN SEND PACKET HAS ELAPSED
+<   parameter OUT_IN_BITS = `SYNC_BITS + `ADDR_BITS + (`PID_BITS << 1) +
+<   `CRC5_BITS + `ENDP_BITS + `EOP_BITS - 1;
+< 
+<   parameter DATA0_BITS = `SYNC_BITS + (`PID_BITS << 1) + `CRC16_BITS + 
+<   `PAYLOAD_BITS + `EOP_BITS - 1;
+< 
+<   parameter ACK_NACK_BITS = `SYNC_BITS + (`PID_BITS << 1) - 1;
+< 
+<   // tracking expected number of bits
+<   logic [`COUNT_BITS - 1 : 0] expBitAmount;
+<   
+<   always_comb begin
+<     case (pktType) inside
+<       PID_DATA0 : expBitAmount = DATA0_BITS;
+<       PID_OUT, PID_IN : expBitAmount = OUT_IN_BITS;
+<       PID_ACK, PID_NAK : expBitAmount = ACK_NACK_BITS;
+<     endcase
+<   end
+183,184c139
+<   .currPhase(currPhase), .crc(crc), .crcDataReady(crcDataReady), 
+<   .pktType(pktType));
+---
+>   .currPhase(currPhase), .crc(crc), .crcDataReady(crcDataReady));
+206c161
+<   assign done = (count == expBitAmount);
+---
+>   assign done = (count == 'd34);
+293a249
+>   // initial packet for other cases defaulted to 0 for now
+306,318c262,269
+<       PID_DATA0: begin
+<         init = ((`SYNC) << (`MAX_PKT_SIZE_NO_EOP - `SYNC_BITS)) + 
+<         (errorPID(pktType) << (`MAX_PKT_SIZE_NO_EOP - `SYNC_BITS - 
+<         (`PID_BITS << 1))) +
+<         (revSixtyFour(payload) << (`MAX_PKT_SIZE_NO_EOP - `SYNC_BITS - 
+<         (`PID_BITS << 1) - `PAYLOAD_BITS));
+<       end
+< 
+<       PID_ACK, PID_NAK: begin
+<         init = ((`SYNC) << (`MAX_PKT_SIZE_NO_EOP - `SYNC_BITS)) + 
+<         (errorPID(pktType) << (`MAX_PKT_SIZE_NO_EOP - `SYNC_BITS - 
+<         (`PID_BITS << 1)));
+<       end
+---
+>       // PID_DATA0: begin
+>       //   init = ((`SYNC) << 88) + (errorPID(pktType) << 80) +
+>       //   (revSixtyFour(payload) << 16);
+>       // end
+> 
+>       // PID_ACK, PID_NACK: begin
+>       //   init = 
+>       // end

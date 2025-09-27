@@ -1,0 +1,570 @@
+Chronologic VCS simulator copyright 1991-2022
+Contains Synopsys proprietary information.
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Mar 28 13:56 2024
+    ///////////////////////////
+   ////                   ////
+  ////   PHASE 0 BEGIN   ////
+ ////                   ////
+///////////////////////////
+
+No faults loaded. This model is correct.
+
+*************ARITHMETIC CORRECTNESS TESTS*************
+
+----------START OF 10 ADDING TESTS------------
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+----------END OF 10 ADDING TESTS------------
+
+----------START OF ANDING TEST------------
+......Passed!!
+----------END OF ANDING TEST------------
+
+----------START OF SUBTRACTING TEST------------
+......Passed!!
+----------END OF SUBTRACTING TEST------------
+
+----------START OF SWAPPING TEST------------
+SWAP stack count...passed
+top...passed
+bottom...passed
+----------END OF SWAPPING TEST------------
+
+----------START OF NEGATING TEST------------
+......Passed!!
+----------END OF NEGATING TEST------------
+
+----------START OF POPPING TEST------------
+......Passed!!
+----------END OF POPPING TEST------------
+
+*************END OF ARITHMETIC CORRECTNESS TEST***************
+
+*************DONE & OVERFLOW TEST***************
+
+----------START OF DONE TEST------------
+......Correct Asserted!!
+......Finished Asserted!!
+----------END OF DONE TEST------------
+
+----------START OF DATAOVEFLOW TEST------------
+Adding Overflow
+......Passed!!
+Subtracting Overflow
+......Passed!!
+----------END OF DATAOVERFLOW TEST------------
+
+*************DONE & OVERFLOW TEST***************
+
+*************STACK OVERFLOW & UNEXPECTED DONE TEST***************
+
+----------START OF STACK_OVERFLOW & UNEXPECTED DONE TEST------------
+#1 StackOverflow Test......Passed!!
+"top.sv", 807: top.assert_stackOverflow: started at 1055s failed at 1065s
+	Offending '((count_stack < 4'd8) || (count_stack == 4'd15))'
+^^CORRECT: Overflow detected..stackOverflow correctly asserted!!
+
+Unexpected Done Test......Passed!!
+----------END  OF STACK_OVERFLOW & UNEXPECTED DONE TEST------------
+
+----------START OF CHECK_STACK TEST------------
+----------END  OF CHECK_STACK TEST------------
+
+----------START OF SWAP_STACK TEST------------
+----------END OF SWAP_STACK TEST------------
+
+
+*************END: STACK OVERFLOW & UNEXPECTED DONE TEST***************
+
+************* START of Protocol Error Tests***************
+
+----------START OF Invalid Op Error TEST------------
+ProtcolError Test......Passed!!
+----------END OF Invalid Op Error TEST------------
+
+----------START OF Two Element Op Error TEST------------
+ProtocolError Test......Passed!!
+ProtocolError Test......Passed!!
+ProtocolError Test......Passed!!
+ProtocolError Test......Passed!!
+----------END OF Two Element Op Error TEST------------
+
+----------START OF One Element Op Error TEST------------
+ProtocolError Test......Passed!!
+----------END OF One Element Op Error TEST------------
+
+----------START OF Negate Error TEST------------
+ProtocolError Test......Passed!!
+----------END OF Negate Error TEST------------
+
+----------START OF START-START Error TEST------------
+ProtocolError Test......Passed!!
+----------END OF START-START Error TEST------------
+
+----------START OF betweenStartDone Error TEST------------
+ProtocolError Test......Passed!!
+......Finished Asserted!!
+----------END OF betweenStartDoneTEST------------
+
+----------START OF tooMany_Operations Error TEST------------
+ProtocolError Test......Passed!!
+----------END OF tooMany_operations ------------
+
+
+************* END Protocol Error Tests***************
+
+////////////////////////
+////   PHASE 0 END  ////
+////////////////////////
+
+
+    ///////////////////////////
+   ////                   ////
+  ////   PHASE 1 BEGIN   ////
+ ////                   ////
+///////////////////////////
+
+Loading 1 fault...
+
+*************ARITHMETIC CORRECTNESS TESTS*************
+
+----------START OF 10 ADDING TESTS------------
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+----------END OF 10 ADDING TESTS------------
+
+----------START OF ANDING TEST------------
+......Passed!!
+----------END OF ANDING TEST------------
+
+----------START OF SUBTRACTING TEST------------
+......Passed!!
+----------END OF SUBTRACTING TEST------------
+
+----------START OF SWAPPING TEST------------
+SWAP stack count...passed
+top...passed
+bottom...passed
+----------END OF SWAPPING TEST------------
+
+----------START OF NEGATING TEST------------
+......Passed!!
+----------END OF NEGATING TEST------------
+
+----------START OF POPPING TEST------------
+......Passed!!
+----------END OF POPPING TEST------------
+
+*************END OF ARITHMETIC CORRECTNESS TEST***************
+
+*************DONE & OVERFLOW TEST***************
+
+----------START OF DONE TEST------------
+......Correct Asserted!!
+......Finished Asserted!!
+----------END OF DONE TEST------------
+
+----------START OF DATAOVEFLOW TEST------------
+Adding Overflow
+......Passed!!
+Subtracting Overflow
+......Passed!!
+----------END OF DATAOVERFLOW TEST------------
+
+*************DONE & OVERFLOW TEST***************
+
+*************STACK OVERFLOW & UNEXPECTED DONE TEST***************
+
+----------START OF STACK_OVERFLOW & UNEXPECTED DONE TEST------------
+#1 StackOverflow Test......Passed!!
+"top.sv", 807: top.assert_stackOverflow: started at 2685s failed at 2695s
+	Offending '((count_stack < 4'd8) || (count_stack == 4'd15))'
+^^CORRECT: Overflow detected..stackOverflow correctly asserted!!
+
+Unexpected Done Test......Passed!!
+----------END  OF STACK_OVERFLOW & UNEXPECTED DONE TEST------------
+
+----------START OF CHECK_STACK TEST------------
+----------END  OF CHECK_STACK TEST------------
+
+----------START OF SWAP_STACK TEST------------
+----------END OF SWAP_STACK TEST------------
+
+
+*************END: STACK OVERFLOW & UNEXPECTED DONE TEST***************
+
+************* START of Protocol Error Tests***************
+
+----------START OF Invalid Op Error TEST------------
+ProtcolError Test......Passed!!
+----------END OF Invalid Op Error TEST------------
+
+----------START OF Two Element Op Error TEST------------
+"top.sv", 576: top.runTestbench.twoElOp_SUB_ERROR: started at 2975s failed at 2975s
+	Offending 'protocolError'
+Protocol Error: Expected protocolError to be asserted.Subtracting with one element
+
+"top.sv", 598: top.runTestbench.twoElOp_ADDING_ERROR: started at 3005s failed at 3005s
+	Offending 'protocolError'
+Protocol Error: Expected protocolError to be asserted.Adding with one element
+
+"top.sv", 620: top.runTestbench.twoElOp_SWAP_ERROR: started at 3035s failed at 3035s
+	Offending 'protocolError'
+Protocol Error: Expected protocolError to be asserted.SWAPPING with one element
+
+"top.sv", 642: top.runTestbench.twoElOp_AND_ERROR: started at 3065s failed at 3065s
+	Offending 'protocolError'
+Protocol Error: Expected protocolError to be asserted.ANDING with one element
+
+----------END OF Two Element Op Error TEST------------
+
+----------START OF One Element Op Error TEST------------
+"top.sv", 671: top.runTestbench.oneElOp_POP_ERROR: started at 3105s failed at 3105s
+	Offending 'protocolError'
+Protocol Error: Expected protocolError to be asserted.Popping with no elements left
+
+----------END OF One Element Op Error TEST------------
+
+----------START OF Negate Error TEST------------
+"top.sv", 699: top.runTestbench.oneElOp_NEGATE_ERROR: started at 3145s failed at 3145s
+	Offending 'protocolError'
+Protocol Error: Expected protocolError to be asserted.Negating with no elements left
+
+----------END OF Negate Error TEST------------
+
+----------START OF START-START Error TEST------------
+ProtocolError Test......Passed!!
+----------END OF START-START Error TEST------------
+
+----------START OF betweenStartDone Error TEST------------
+"top.sv", 742: top.runTestbench.betweenStartDone_ERROR: started at 3205s failed at 3205s
+	Offending 'protocolError'
+Protocol Error: Expected protocolError to be asserted.no elements between Start and done
+
+......Finished Asserted!!
+----------END OF betweenStartDoneTEST------------
+
+----------START OF tooMany_Operations Error TEST------------
+ProtocolError Test......Passed!!
+----------END OF tooMany_operations ------------
+
+
+************* END Protocol Error Tests***************
+
+
+Removing 1 fault...
+
+////////////////////////
+////   PHASE 1 END  ////
+////////////////////////
+
+
+    ///////////////////////////
+   ////                   ////
+  ////   PHASE 2 BEGIN   ////
+ ////                   ////
+///////////////////////////
+
+Loading 2 faults...
+
+*************ARITHMETIC CORRECTNESS TESTS*************
+
+----------START OF 10 ADDING TESTS------------
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+----------END OF 10 ADDING TESTS------------
+
+----------START OF ANDING TEST------------
+......Passed!!
+----------END OF ANDING TEST------------
+
+----------START OF SUBTRACTING TEST------------
+"top.sv", 185: top.runTestbench.INCORRECT_SUBTRACTING_ERROR: started at 3965s failed at 3965s
+	Offending '((data_a - data_b) == result)'
+CORRECTNESS FAILED: SUBTRACT incorrect, offend assertion
+Expecting result of  33118 but got 33119
+
+----------END OF SUBTRACTING TEST------------
+
+----------START OF SWAPPING TEST------------
+SWAP stack count...passed
+top...passed
+bottom...passed
+----------END OF SWAPPING TEST------------
+
+----------START OF NEGATING TEST------------
+......Passed!!
+----------END OF NEGATING TEST------------
+
+----------START OF POPPING TEST------------
+......Passed!!
+----------END OF POPPING TEST------------
+
+*************END OF ARITHMETIC CORRECTNESS TEST***************
+
+*************DONE & OVERFLOW TEST***************
+
+----------START OF DONE TEST------------
+......Correct Asserted!!
+......Finished Asserted!!
+----------END OF DONE TEST------------
+
+----------START OF DATAOVEFLOW TEST------------
+Adding Overflow
+......Passed!!
+Subtracting Overflow
+......Passed!!
+----------END OF DATAOVERFLOW TEST------------
+
+*************DONE & OVERFLOW TEST***************
+
+*************STACK OVERFLOW & UNEXPECTED DONE TEST***************
+
+----------START OF STACK_OVERFLOW & UNEXPECTED DONE TEST------------
+#1 StackOverflow Test......Passed!!
+"top.sv", 807: top.assert_stackOverflow: started at 4315s failed at 4325s
+	Offending '((count_stack < 4'd8) || (count_stack == 4'd15))'
+^^CORRECT: Overflow detected..stackOverflow correctly asserted!!
+
+"top.sv", 427: top.runTestbench.UNEXPECTED_DONE_ERROR: started at 4385s failed at 4385s
+	Offending 'unexpectedDone'
+unexpectedDone Error: missing unexpectedDone (calling done when its not one element left)
+
+----------END  OF STACK_OVERFLOW & UNEXPECTED DONE TEST------------
+
+----------START OF CHECK_STACK TEST------------
+----------END  OF CHECK_STACK TEST------------
+
+----------START OF SWAP_STACK TEST------------
+----------END OF SWAP_STACK TEST------------
+
+
+*************END: STACK OVERFLOW & UNEXPECTED DONE TEST***************
+
+************* START of Protocol Error Tests***************
+
+----------START OF Invalid Op Error TEST------------
+ProtcolError Test......Passed!!
+----------END OF Invalid Op Error TEST------------
+
+----------START OF Two Element Op Error TEST------------
+ProtocolError Test......Passed!!
+ProtocolError Test......Passed!!
+ProtocolError Test......Passed!!
+ProtocolError Test......Passed!!
+----------END OF Two Element Op Error TEST------------
+
+----------START OF One Element Op Error TEST------------
+ProtocolError Test......Passed!!
+----------END OF One Element Op Error TEST------------
+
+----------START OF Negate Error TEST------------
+ProtocolError Test......Passed!!
+----------END OF Negate Error TEST------------
+
+----------START OF START-START Error TEST------------
+ProtocolError Test......Passed!!
+----------END OF START-START Error TEST------------
+
+----------START OF betweenStartDone Error TEST------------
+ProtocolError Test......Passed!!
+......Finished Asserted!!
+----------END OF betweenStartDoneTEST------------
+
+----------START OF tooMany_Operations Error TEST------------
+ProtocolError Test......Passed!!
+----------END OF tooMany_operations ------------
+
+
+************* END Protocol Error Tests***************
+
+
+Removing 2 faults...
+
+////////////////////////
+////   PHASE 2 END  ////
+////////////////////////
+
+
+    ///////////////////////////
+   ////                   ////
+  ////   PHASE 3 BEGIN   ////
+ ////                   ////
+///////////////////////////
+
+Loading 2 faults...
+
+*************ARITHMETIC CORRECTNESS TESTS*************
+
+----------START OF 10 ADDING TESTS------------
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+......Passed!!
+----------END OF 10 ADDING TESTS------------
+
+----------START OF ANDING TEST------------
+......Passed!!
+----------END OF ANDING TEST------------
+
+----------START OF SUBTRACTING TEST------------
+......Passed!!
+----------END OF SUBTRACTING TEST------------
+
+----------START OF SWAPPING TEST------------
+SWAP stack count...passed
+top...passed
+bottom...passed
+----------END OF SWAPPING TEST------------
+
+----------START OF NEGATING TEST------------
+"top.sv", 251: top.runTestbench.INCORRECT_NEGATING_ERROR: started at 5685s failed at 5685s
+	Offending '(result == 16'hffff)'
+CORRECTNESS FAILED: Negating incorrect, offend assertion
+Expecting result of  ffff but got fffe
+
+----------END OF NEGATING TEST------------
+
+----------START OF POPPING TEST------------
+......Passed!!
+----------END OF POPPING TEST------------
+
+*************END OF ARITHMETIC CORRECTNESS TEST***************
+
+*************DONE & OVERFLOW TEST***************
+
+----------START OF DONE TEST------------
+......Correct Asserted!!
+......Finished Asserted!!
+----------END OF DONE TEST------------
+
+----------START OF DATAOVEFLOW TEST------------
+Adding Overflow
+......Passed!!
+Subtracting Overflow
+......Passed!!
+----------END OF DATAOVERFLOW TEST------------
+
+*************DONE & OVERFLOW TEST***************
+
+*************STACK OVERFLOW & UNEXPECTED DONE TEST***************
+
+----------START OF STACK_OVERFLOW & UNEXPECTED DONE TEST------------
+#1 StackOverflow Test......Passed!!
+"top.sv", 807: top.assert_stackOverflow: started at 5945s failed at 5955s
+	Offending '((count_stack < 4'd8) || (count_stack == 4'd15))'
+^^CORRECT: Overflow detected..stackOverflow correctly asserted!!
+
+Unexpected Done Test......Passed!!
+----------END  OF STACK_OVERFLOW & UNEXPECTED DONE TEST------------
+
+----------START OF CHECK_STACK TEST------------
+"top.sv", 480: top.runTestbench.unnamed$$_8: started at 6105s failed at 6105s
+	Offending '(stackOut[6] == 16'b1)'
+Error: "top.sv", 480: top.runTestbench.unnamed$$_8: at time 6105
+STACK ERROR: INCORRECT ELEMENT, got: 0, expected 1
+"top.sv", 482: top.runTestbench.unnamed$$_9: started at 6105s failed at 6105s
+	Offending '(stackOut[7] == 16'b1)'
+Error: "top.sv", 482: top.runTestbench.unnamed$$_9: at time 6105
+STACK ERROR: INCORRECT ELEMENT, got: 0, expected 1
+----------END  OF CHECK_STACK TEST------------
+
+----------START OF SWAP_STACK TEST------------
+"top.sv", 516: top.runTestbench.unnamed$$_10: started at 6185s failed at 6185s
+	Offending '(stackOut[0] == 16'h0005)'
+Error: "top.sv", 516: top.runTestbench.unnamed$$_10: at time 6185
+STACK ERROR: INCORRECT ELEMENT, got: 6, expected 5
+"top.sv", 518: top.runTestbench.unnamed$$_11: started at 6185s failed at 6185s
+	Offending '(stackOut[1] == 16'h0006)'
+Error: "top.sv", 518: top.runTestbench.unnamed$$_11: at time 6185
+STACK ERROR: INCORRECT ELEMENT, got: 5, expected 6
+----------END OF SWAP_STACK TEST------------
+
+
+*************END: STACK OVERFLOW & UNEXPECTED DONE TEST***************
+
+************* START of Protocol Error Tests***************
+
+----------START OF Invalid Op Error TEST------------
+ProtcolError Test......Passed!!
+----------END OF Invalid Op Error TEST------------
+
+----------START OF Two Element Op Error TEST------------
+ProtocolError Test......Passed!!
+ProtocolError Test......Passed!!
+ProtocolError Test......Passed!!
+ProtocolError Test......Passed!!
+----------END OF Two Element Op Error TEST------------
+
+----------START OF One Element Op Error TEST------------
+ProtocolError Test......Passed!!
+----------END OF One Element Op Error TEST------------
+
+----------START OF Negate Error TEST------------
+ProtocolError Test......Passed!!
+----------END OF Negate Error TEST------------
+
+----------START OF START-START Error TEST------------
+ProtocolError Test......Passed!!
+----------END OF START-START Error TEST------------
+
+----------START OF betweenStartDone Error TEST------------
+ProtocolError Test......Passed!!
+......Finished Asserted!!
+----------END OF betweenStartDoneTEST------------
+
+----------START OF tooMany_Operations Error TEST------------
+ProtocolError Test......Passed!!
+----------END OF tooMany_operations ------------
+
+
+************* END Protocol Error Tests***************
+
+
+Removing 2 faults...
+
+////////////////////////
+////   PHASE 3 END  ////
+////////////////////////
+
+
+Total clock cycles used:         651
+
+
+
+$finish called from file "../../TA_calc_grading_F23_2.sv", line 1145.
+$finish at simulation time                 6515
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 6515
+CPU Time:      0.510 seconds;       Data structure size:   0.0Mb
+Thu Mar 28 13:56:55 2024
